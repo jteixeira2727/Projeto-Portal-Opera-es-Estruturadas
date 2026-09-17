@@ -30,6 +30,24 @@
 
 **Situação atual (dado financeiro, ago/26):** o portfólio segue **100% locado** (todos os 5 prédios alugados para a Viva) — ou seja, a receita de locação pré-reestruturação continua ativa na prática — mas já há venda de unidades em andamento: **9 unidades vendidas** até jul/26 (R$ 4,22 milhões), sendo a mais recente 1 unidade do Onze22 escriturada em jul/26.
 
+## Acompanhamento mensal (Relatório de Crédito)
+
+Desde a reestruturação, o principal ponto de atenção mensal da operação é o acompanhamento das **vendas**. Todo mês a Devedora entrega o **"Relatório Créditos"** (definido na cláusula 3.20 do TS, incluída pelo 3º Aditamento) — na prática, um Excel (`.xlsb`) chamado "Relatório de Crédito". Exemplo salvo em `Operações/Residencial Jardins FL2/Documentos/Relatorio Credito_Set26 - CRI16E.xlsb` *(não versionado no Git — mesmo tratamento dos demais documentos brutos da operação)*.
+
+**Abas do relatório**: `Ordem de Alocação Pag_16E` (a cascata do mês), `Recebimentos Vendas`, `Recebimento Aluguel`, `Unidades`, `Características` (dados de emissão/integralização do CRI).
+
+Pontos que precisam ser checados todo mês:
+
+1. **Vendas — só a escriturada entra na cascata do mês.** O relatório traz tanto as vendas já **finalizadas/escrituradas** no período quanto as que ainda **não foram 100% recebidas** (aba `Recebimentos Vendas` tem uma coluna de "% Recebimento no período" por unidade — só quando chega a 100% a venda conta). **Importante**: apenas a venda **já escriturada (100% recebida)** compõe a "Amortização Cash Sweep" do mês — vendas parciais/em andamento ficam de fora até serem concluídas. A aba também traz a contagem de "Unidades Não Escrituradas" (159 no exemplo de set/26).
+2. **Locação — sempre olhar o valor BRUTO**, não o líquido. O relatório separa "Aluguel Bruto" (usado para calcular o **covenant de Índice de Cobertura/ICSD**) de "Aluguéis Líquidos" (o que efetivamente entra na fórmula da cascata/cash sweep). São dois números diferentes — não confundir qual usar em cada cálculo.
+3. **Cascata do mês** (aba `Ordem de Alocação Pag_16E`) — conferir contra o que está nos documentos (3º Aditamento ao TS), prestando atenção a:
+   - **Vazamentos** ("Vazamentos Permitidos" do TS): comissão de vendas (5%), impostos sobre receita bruta (9%), e o custo de manutenção de estoque (R$ 1.031/unidade não escriturada).
+   - Se há **necessidade de aporte ou consumo do Fundo de Reserva** (campo "Diferença Fundo e Saldo do Fundo de Reserva" — se negativo/positivo indica desenquadramento a corrigir).
+4. **Posições de Fundo de Reserva e Fundo de Despesas** — conferir se o saldo está acima do mínimo exigido (campos "Valor Mínimo" vs "Saldo" de cada fundo no relatório) — sinal de desenquadramento se o saldo ficar abaixo do mínimo.
+5. **Índice de Cobertura (ICSD)** — covenant de min. 1,25x (cláusula 10.1(xxviii) da Escritura de Debêntures), calculado com o Aluguel Bruto do ponto 2 acima. Em ago/26 estava em 2,06x (enquadrado).
+
+*Exemplo de referência (Relatório de Crédito de set/26): Vendas do mês R$ 397.000, Aluguéis Líquidos R$ 341.902,21, Aluguel Bruto R$ 869.277,25, Vazamentos R$ 297.743,95, Fundo de Reserva com saldo de R$ 1.496.867,18 (mínimo R$ 1.298.478,30 — enquadrado), Fundo de Despesas com saldo de R$ 29.231,18 (mínimo R$ 28.880,17 — enquadrado).*
+
 ## Instrumentos (9)
 
 | Instrumento | Data original | Aditamento mais recente na pasta | Situação |

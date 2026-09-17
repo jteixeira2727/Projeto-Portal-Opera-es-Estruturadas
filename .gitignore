@@ -10,17 +10,19 @@
 /Operações/*/*
 !/Operações/*/memoria.md
 
-# Pipeline: dependências e artefatos gerados pelo build (regeneráveis via
-# build_data.py / combine_build.py / extract_documents.py — não precisam de
-# histórico próprio, e alguns têm texto extraído de documentos confidenciais)
+# Pipeline: dependências e artefatos 100% derivados (template + dados já
+# versionados) — regeneráveis com combine_build.py, sem motivo pra versionar
+# o HTML final duplicando o que já está no template + no JSON.
 /Pipeline/node_modules/
-/Pipeline/documents_data.json
-/Pipeline/portfolio_data_wrapped.json
 /Pipeline/portfolio_data.json
 /Pipeline/portal_publish.html
 /Pipeline/portal.html
 /Pipeline/portal_localtest.html
 /Pipeline/log.txt
+
+# documents_data.json e portfolio_data_wrapped.json SÃO versionados
+# (decisão 2026-09-17: repositório privado, e são a base de dados que o
+# site vai consumir no deploy) — não adicionar aqui.
 
 # Python
 __pycache__/

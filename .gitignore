@@ -1,0 +1,34 @@
+# Planilhas financeiras e PDF fonte (grandes, confidenciais, não editados aqui)
+/*.xlsx
+/*.pdf
+
+# Screenshots/demos
+/Claude outputs/
+
+# Documentos legais/financeiros brutos de cada operação (confidenciais) —
+# mas mantém os memoria.md que criamos, esses sim entram no histórico.
+/Operações/*/*
+!/Operações/*/memoria.md
+
+# Pipeline: dependências e artefatos gerados pelo build (regeneráveis via
+# build_data.py / combine_build.py / extract_documents.py — não precisam de
+# histórico próprio, e alguns têm texto extraído de documentos confidenciais)
+/Pipeline/node_modules/
+/Pipeline/documents_data.json
+/Pipeline/portfolio_data_wrapped.json
+/Pipeline/portfolio_data.json
+/Pipeline/portal_publish.html
+/Pipeline/portal.html
+/Pipeline/portal_localtest.html
+/Pipeline/log.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Configuração local pessoal do Claude Code (não é do projeto)
+/.claude/settings.local.json

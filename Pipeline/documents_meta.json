@@ -1,0 +1,1076 @@
+{
+  "Residencial Jardins FL2": {
+    "metodologia_nota": "Mapeamento construído a partir dos 'considerandos' dos próprios aditamentos presentes na pasta (nenhum instrumento ORIGINAL está na pasta desta operação — só aditamentos recentes) e das 2 atas disponíveis. Sem o Termo de Securitização original, não é possível confirmar a lista canônica completa de 'Documentos da Operação' definida nele — a lista abaixo é o que foi possível reconstruir a partir do que os próprios aditamentos citam uns dos outros.",
+    "instrumentos": [
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de CRI da 1ª Série da 16ª Emissão (Habitasec)",
+        "data_original": "2022-09-27",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2022-10-20",
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 2,
+            "data": "2024-04-01",
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "3 Aditamento Termo de Securitização CRI Promontoria 5 - PMK Advogados 20052026 Versão 02 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "escritura_debentures",
+        "nome": "Escritura de Emissão de Debêntures (Promontoria Imóveis 5 S.A.)",
+        "data_original": "2022-09-22",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2022-09-27",
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 2,
+            "data": "2022-10-20",
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": "2024-04-01",
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 4,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "4 Aditamento Termo de Emissão de Debêntures CRI Promontoria 5 - PMK Advogados 20052026 Versão 04 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "Escritura de Debêntures"
+      },
+      {
+        "tipo": "escritura_cci",
+        "nome": "Escritura de Emissão de CCI",
+        "data_original": null,
+        "nota": "Data de celebração original não confirmada na leitura (não citada de forma explícita no texto do 2º Aditamento, o único disponível).",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Existência inferida pelo número do aditamento presente ser o 2º; data não confirmada."
+          },
+          {
+            "numero": 2,
+            "data": "2026-05-12",
+            "presente_na_pasta": true,
+            "arquivo": "2 Aditamento Escritura de Emissão de CCI CRI Promontoria 5 - PMK Advogados 12052026 Versão 02 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "Escritura de CCI"
+      },
+      {
+        "tipo": "cessao_fiduciaria",
+        "nome": "Contrato de Cessão Fiduciária de Recebíveis",
+        "data_original": null,
+        "nota": "Data de celebração original não confirmada na leitura (o 2º Aditamento não a repete de forma explícita).",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Existência inferida pelo número do aditamento presente ser o 2º; data não confirmada."
+          },
+          {
+            "numero": 2,
+            "data": "2026-05-13",
+            "presente_na_pasta": true,
+            "arquivo": "2 Aditamento Cessão Fiduciária CRI Promontoria 5 - PMK Advogados 13052026 Versão 03 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "Cessão Fiduciária de Recebíveis"
+      },
+      {
+        "tipo": "af_acoes",
+        "nome": "Alienação Fiduciária de Ações (Promontoria Imóveis 3 / Fundo Multiapartamentos 1)",
+        "data_original": null,
+        "nota": "Data de celebração original não confirmada na leitura (o 4º Aditamento não a repete de forma explícita).",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 2,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 4,
+            "data": "2026-05-13",
+            "presente_na_pasta": true,
+            "arquivo": "4 Aditamento AF de Ações Promontoria 5 - PMK Advogados 13052026 Versão 03 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "Alienação Fiduciária de Ações"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Alienação Fiduciária de Imóveis — Next Haddock",
+        "data_original": "2023-05-08",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2024-04-01",
+            "presente_na_pasta": false,
+            "nota": "Ata de 24/04/2023 desta operação autorizou uma alteração condicional ligada à aquisição do Next Haddock, mas não há como confirmar com certeza se este 1º Aditamento (quase 1 ano depois) foi o instrumento que a implementou — o texto do 2º Aditamento não faz essa ligação explícita."
+          },
+          {
+            "numero": 2,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "2 Aditamento AF Imoveis Next Haddock - PMK Advogados 20052026 Versão 04 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "AF de Imóveis — Next Haddock"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Alienação Fiduciária de Imóveis — Next Paulista",
+        "data_original": "2023-04-12",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Texto só diz 'conforme aditado de tempos em tempos', sem citar datas."
+          },
+          {
+            "numero": 2,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "3 Aditamento AF Imoveis Next Paulista- PMK Advogados 20052026 Versão 04 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "AF de Imóveis — Next Paulista"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Alienação Fiduciária de Imóveis — Next França",
+        "data_original": "2023-03-08",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Texto só diz 'conforme aditado de tempos em tempos', sem citar datas."
+          },
+          {
+            "numero": 2,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 4,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "4 Aditamento AF Imoveis Next França- PMK Advogados 20052026 Versão 04 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "AF de Imóveis — Next França"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Alienação Fiduciária de Imóveis — Onze 22",
+        "data_original": null,
+        "nota": "Data de celebração original não confirmada na leitura (trecho do 4º Aditamento não chegou a repetir a data antes de ser cortado na extração).",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 2,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 4,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "4 Aditamento AF Imoveis Onze 22- PMK Advogados 20052026 Versão 04 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "AF de Imóveis — Onze 22"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Alienação Fiduciária de Imóveis — Terraço",
+        "data_original": "2022-10-19",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Texto só diz 'conforme aditado de tempos em tempos' — 6 aditamentos anteriores (1º a 6º) não estão na pasta e não têm data individualmente confirmada."
+          },
+          {
+            "numero": 2,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 3,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 4,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 5,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 6,
+            "data": null,
+            "presente_na_pasta": false
+          },
+          {
+            "numero": 7,
+            "data": "2026-05-20",
+            "presente_na_pasta": true,
+            "arquivo": "7 Aditamento AF Imoveis Terraço-  PMK Advogados 20052026 Versão 04 - Clicksign.pdf",
+            "origem": "Assembleia de 23/03/2026"
+          }
+        ],
+        "nome_curto": "AF de Imóveis — Terraço"
+      }
+    ]
+  },
+  "Residencial Itaim FL2": {
+    "metodologia_nota": "Diferente da Residencial Jardins, aqui o Termo de Securitização ORIGINAL está na pasta — permitiu confirmar a lista canônica de 'Documentos da Operação' direto na cláusula 1.1 do próprio Termo (definição fechada, 6 itens), em vez de reconstruir por inferência a partir de aditamentos.",
+    "instrumentos": [
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de CRI da 195ª Série da 1ª Emissão (Habitasec)",
+        "data_original": "2020-12-16",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "escritura_debentures",
+        "nome": "Escritura de Emissão de Debêntures (Promontoria Imóveis 4 S.A.)",
+        "data_original": "2020-12-16",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de Debêntures"
+      },
+      {
+        "tipo": "escritura_cci",
+        "nome": "Escritura de Emissão de CCI",
+        "data_original": "2020-12-16",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de CCI"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Contrato de Alienação Fiduciária de Imóveis",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "nota": "Data de celebração não confirmada — nenhum documento deste instrumento está na pasta.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Alienação Fiduciária de Imóveis"
+      },
+      {
+        "tipo": "af_acoes",
+        "nome": "Contrato de Alienação Fiduciária de Ações (Multiapartamentos 1 / Promontoria Imóveis 3)",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "nota": "A ata de 29/06/2022 autoriza expressamente a celebração de um novo aditamento a este contrato (para refletir redução de capital da Devedora), mas nem o contrato original nem esse aditamento estão na pasta — não é possível confirmar se ele foi formalizado.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Alienação Fiduciária de Ações"
+      },
+      {
+        "tipo": "cessao_fiduciaria",
+        "nome": "Contrato de Cessão Fiduciária de Recebíveis",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "nota": "Data de celebração não confirmada — nenhum documento deste instrumento está na pasta.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Cessão Fiduciária de Recebíveis"
+      }
+    ]
+  },
+  "Localfrio": {
+    "metodologia_nota": "A extração de texto deste Termo de Securitização (arquivo antigo, provável scan/OCR de baixa qualidade) tem ruído significativo (acentos e caracteres trocados, tabela de definições com colunas embaralhadas) -- a lista de instrumentos abaixo reflete os que puderam ser identificados com confiança razoável nas definições legíveis; a cláusula \"Documentos da Operação\" existe no texto mas está ilegível o bastante para não ser citada aqui como enumeração fechada.",
+    "instrumentos": [
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de CRI da 54ª e 55ª Séries da 4ª Emissão (ISEC/Virgo Securitizadora)",
+        "data_original": null,
+        "nota": "Data de celebração não identificada com clareza nesta leitura (OCR do documento não permitiu localizá-la; o Contrato de Cessão da mesma operação é de 14/11/2019, o que sugere uma data próxima).",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "contrato_cessao",
+        "nome": "Contrato de Cessão de Créditos Imobiliários e Outras Avenças",
+        "data_original": "2019-11-14",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Contrato de Cessão de Créditos"
+      },
+      {
+        "tipo": "cessao_fiduciaria",
+        "nome": "Contrato de Cessão Fiduciária de Conta Bancária em Garantia e Outras Avenças",
+        "data_original": null,
+        "nota": "Texto diz \"celebrado nesta data\" (mesma data do Termo, não confirmada com precisão).",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Cessão Fiduciária — Conta Bancária"
+      },
+      {
+        "tipo": "conta_vinculada",
+        "nome": "Contrato de Conta Vinculada (depositário Banco Bradesco)",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Contrato de Conta Vinculada"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Alienação Fiduciária do Imóvel 1",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Alienação Fiduciária de Imóvel"
+      },
+      {
+        "tipo": "af_quotas",
+        "nome": "Alienação Fiduciária de Quotas",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Alienação Fiduciária de Quotas"
+      },
+      {
+        "tipo": "escritura_cci",
+        "nome": "Escritura de Emissão de CCI",
+        "data_original": null,
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de CCI"
+      },
+      {
+        "tipo": "cedula_credito_bancario",
+        "nome": "Cédula de Crédito Bancário nº 000270094412 (Banco Santander)",
+        "data_original": "2017-04-04",
+        "nota": "Texto diz \"conforme aditada\" -- existem aditamentos, não quantificados nem datados nesta leitura.",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "CCB — Santander"
+      },
+      {
+        "tipo": "cedula_credito_bancario",
+        "nome": "Cédula de Crédito Bancário (Banco Bradesco)",
+        "data_original": "2017-03-16",
+        "nota": "Texto diz \"conforme aditada\" -- existem aditamentos, não quantificados nem datados nesta leitura.",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "CCB — Bradesco"
+      }
+    ]
+  },
+  "WT Log": {
+    "metodologia_nota": "Termo de Securitização original está na pasta, com definição fechada de \"Documentos da Operação\" (cláusula de definições) -- lista abaixo confirmada direto no texto, sem necessidade de inferência via aditamentos.",
+    "instrumentos": [
+      {
+        "tipo": "termo_emissao_nc",
+        "nome": "Termo de Emissão de Notas Comerciais Escriturais (FDR Independência Desenvolvimento Imobiliário)",
+        "data_original": "2023-01-06",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Termo de Emissão — Nota Comercial"
+      },
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de CRI da Série Única da 27ª Emissão (Canal Companhia de Securitização)",
+        "data_original": "2023-01-06",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": true,
+            "arquivo": "CRI WTLOG - PRIMEIRO ADITAMENTO AO TERMO DE SECURITIZAÇÃO.pdf",
+            "nota": "Data de assinatura não localizada com precisão no texto (não achei um Clicksign/DocuSign com data clara na leitura); o próprio aditamento diz ter sido celebrado ANTES da integralização dos CRI (portanto sem necessidade de assembleia), então não decorre de nenhuma das 3 atas da pasta."
+          }
+        ],
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "escritura_cci",
+        "nome": "Escritura de Emissão de CCI",
+        "data_original": null,
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de CCI"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Contrato de Alienação Fiduciária de Imóveis",
+        "data_original": null,
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Alienação Fiduciária de Imóveis"
+      },
+      {
+        "tipo": "af_quotas",
+        "nome": "Contrato de Alienação Fiduciária de Quotas",
+        "data_original": null,
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Alienação Fiduciária de Quotas"
+      },
+      {
+        "tipo": "cessao_fiduciaria",
+        "nome": "Contrato de Cessão Fiduciária em Garantia e Outras Avenças",
+        "data_original": "2023-01-06",
+        "original_presente_na_pasta": false,
+        "nota": "A ata de 02/05/2023 confirma a existência de um aditamento em preparação a este contrato (correção de redação do Considerando D, Anexo III) -- nem o contrato original nem esse aditamento estão na pasta.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Cessão Fiduciária"
+      },
+      {
+        "tipo": "aval",
+        "nome": "Aval (parte dos Contratos de Garantia, conforme definição do Termo)",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "nota": "Citado na definição de \"Contratos de Garantia\" do Termo, mas não identificado como instrumento separado na pasta -- pode estar embutido no próprio Termo de Emissão (não confirmado nesta leitura).",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Aval"
+      }
+    ]
+  },
+  "BR Properties": {
+    "metodologia_nota": "Nenhum Termo de Securitização está na pasta desta operação (só a Escritura de Emissão de Debêntures original e os 1º Aditamentos aos 2 Contratos de Garantia) -- lista de instrumentos reconstruída a partir dos considerandos desses 2 aditamentos, que citam a Escritura e o Termo pelo nome e data. Os 5 arquivos \"AF Galpão G1/G200-A/B/C/D\" são matrículas de imóvel (registro cartorial), não o contrato de Alienação Fiduciária em si -- tratados como evidência de registro, não como instrumento próprio. Os 2 arquivos \"TD_RTD...\" são comprovantes de registro em cartório (RTD) dos aditamentos, mesma lógica.",
+    "instrumentos": [
+      {
+        "tipo": "escritura_debentures",
+        "nome": "Escritura de Emissão de Debêntures da 18ª Emissão (BR Properties S.A.)",
+        "data_original": "2023-08-08",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de Debêntures"
+      },
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de CRI da 179ª Emissão (True Securitizadora)",
+        "data_original": null,
+        "nota": "Data de celebração não confirmada nesta leitura (não está na pasta; os aditamentos aos Contratos de Garantia citam o Termo pelo nome, mas não repetem sua data de celebração).",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Contrato de Alienação Fiduciária de Imóvel",
+        "data_original": "2023-08-09",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": true,
+            "arquivo": "CRI 179ª (BR Prorpeties) - Alienação Fiduciária de Imóvel_1ªAditamento.pdf",
+            "nota": "O próprio aditamento confirma ter sido celebrado ANTES da integralização dos CRI, sem necessidade de assembleia -- não decorre da ata de 17/11/2025."
+          }
+        ],
+        "nome_curto": "Alienação Fiduciária de Imóvel"
+      },
+      {
+        "tipo": "cessao_fiduciaria",
+        "nome": "Contrato de Cessão Fiduciária de Direitos Creditórios",
+        "data_original": "2023-08-09",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": true,
+            "arquivo": "CRI 179ª (BR Prorpeties) - Cessão Fiduciaria de Direitos Creditórios_1ªAditamento.pdf",
+            "nota": "Mesma situação do aditamento à Alienação Fiduciária -- celebrado antes da integralização dos CRI, sem necessidade de assembleia."
+          }
+        ],
+        "nome_curto": "Cessão Fiduciária de Direitos Creditórios"
+      }
+    ]
+  },
+  "Evolution": {
+    "metodologia_nota": "Lista canônica reconstruída a partir dos considerandos do 1º e 5º Aditamentos à Cessão Fiduciária e da própria Escritura/TS (não há um 'quadro de documentos' único e explícito no Termo). A operação nasce de um Contrato de Promessa de Compra e Venda de Imóveis (GIEDI -> Fundo, 28/10/2019, aditado 12/12/2019) que não é tratado aqui como instrumento da securitização em si (é o negócio imobiliário subjacente, não um 'Documento da Operação' no sentido do Termo) -- os 5 instrumentos abaixo são os que a Cláusula 8.1 do Termo e os considerandos dos aditamentos tratam como Garantias/Documentos da Operação propriamente ditos. Pasta contém 2 versões (assinatura + registro em cartório) do 1º e do 5º Aditamento à Cessão Fiduciária -- tratadas como o mesmo evento, não como 2 aditamentos distintos.",
+    "instrumentos": [
+      {
+        "tipo": "contrato_cessao_creditos",
+        "nome": "Instrumento Particular de Contrato de Cessão de Créditos Imobiliários e Outras Avenças (\"Contrato de Cessão\")",
+        "data_original": "2019-12-12",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nota": "Cessão dos Créditos Imobiliários pela GIEDI (Cedente) à Securitizadora, com anuência do Fundo. Não está na pasta; conhecido apenas pela citação nos considerandos do Aditamento à Cessão Fiduciária.",
+        "nome_curto": "Contrato de Cessão de Créditos"
+      },
+      {
+        "tipo": "escritura_cci",
+        "nome": "Escritura Particular de Emissão de Cédula de Crédito Imobiliário Integral sem Garantia Real Imobiliária sob a forma Escritural",
+        "data_original": "2019-12-12",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nota": "Não está na pasta; conhecida apenas pela citação nos considerandos do Aditamento à Cessão Fiduciária.",
+        "nome_curto": "Escritura de CCI"
+      },
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de Créditos Imobiliários da 181ª Série da 1ª Emissão (Habitasec Securitizadora)",
+        "data_original": "2019-12-12",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2024-11-28",
+            "presente_na_pasta": true,
+            "arquivo": "CRI Evolution_1ºAdto TS_REC-Assinado.pdf",
+            "nota": "Decorre da Assembleia Especial de 28/11/2024, que aprovou a inclusão do covenant de Índice de Cobertura Mínimo (>=1,20x) e o reforço da Cessão Fiduciária com os recebíveis do Novo Contrato de Locação (Corteva, celebrado em 24/09/2021). A ata dessa assembleia de 28/11/2024 NÃO está na pasta -- o único arquivo relacionado é um rascunho não assinado e incompleto (com campos em branco tipo '[data]', '[=:=]') datado de 26/11/2024, que trata de um assunto DIFERENTE (rescisão parcial da locação da Elo Participações no 5º/6º andar, ver observação do instrumento de Cessão Fiduciária abaixo) -- ou seja, são 2 assembleias distintas de novembro/2024, e a pasta tem só o rascunho de uma delas e nenhuma ata (só o aditamento resultante) da outra."
+          }
+        ],
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "cessao_fiduciaria",
+        "nome": "Instrumento Particular de Cessão Fiduciária de Direitos Creditórios e Outras Avenças (\"Contrato de Cessão Fiduciária\")",
+        "data_original": "2019-12-12",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2021-06-16",
+            "presente_na_pasta": true,
+            "arquivo": "1E_181S_Evolution - 1º Aditamento ao Contrato de Cessão Fiduciária_v.assinatura.pdf (+ versão registrada em cartório, registro nº 1.384.704 de 22/06/2021)",
+            "nota": null
+          },
+          {
+            "numero": 2,
+            "data": "2022-07-07",
+            "presente_na_pasta": false,
+            "nota": "Não está na pasta; data conhecida apenas pela citação no considerando do 5º Aditamento."
+          },
+          {
+            "numero": 3,
+            "data": "2022-11-29",
+            "presente_na_pasta": false,
+            "nota": "Não está na pasta; data conhecida apenas pela citação no considerando do 5º Aditamento."
+          },
+          {
+            "numero": 4,
+            "data": "2025-01-10",
+            "presente_na_pasta": false,
+            "nota": "Não está na pasta; data conhecida apenas pela citação no considerando do 5º Aditamento. Reflete a rescisão parcial ELO Participações / novo contrato com Banco Digio (deliberada na Assembleia de 21/10/2022, condicionada e só formalizada depois)."
+          },
+          {
+            "numero": 5,
+            "data": "2026-08-12",
+            "presente_na_pasta": true,
+            "arquivo": "CRIEvolution_5ºAdtoCF.pdf (+ versão registrada em cartório, registro nº 1.482.844 de 27/08/2026)",
+            "nota": "Decorre da Assembleia de 13/07/2026 (ata assinada 14/07/2026, arquivo 'Nova Locatária_14.07.26.pdf', já tratada como a ata atual/mais recente no painel de Pendências) e do Novo Contrato de Locação com a CTVA Proteção de Cultivos celebrado em 16/07/2026 -- assinado dentro do prazo de 30 dias corridos (venceria 15/08/2026)."
+          }
+        ],
+        "gap": "Faltam na pasta: o instrumento original e o(s) aditamento(s) 2º, 3º e 4º.",
+        "nota": "Instrumento com o maior número de aditamentos entre as operações mapeadas até agora (5). Só o 1º e o 5º estão na pasta -- os 3 do meio (2022 e 2025) são conhecidos apenas por citação, sem o conteúdo integral disponível para conferência.",
+        "nome_curto": "Cessão Fiduciária de Direitos Creditórios"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Contrato de Alienação Fiduciária de Imóveis",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nota": "Citado na Cláusula 8.1(iv) do Termo como a garantia real sobre os Imóveis, mas o próprio contrato (nem sua data de celebração) não está na pasta nem é citado com data exata em nenhum outro documento lido.",
+        "nome_curto": "Alienação Fiduciária de Imóveis"
+      }
+    ]
+  },
+  "Alianza GRU e Maua": {
+    "metodologia_nota": "Operação estruturada em DUAS séries de CRI sob a mesma 4ª Emissão da Virgo Companhia de Securitização (atual Riza Securitizadora S.A.): a 435ª Série (\"GRU\"/Guarulhos, imóvel Urbanhub Guarulhos, Estrada da Olaria nº 600) e a 447ª Série (\"Mauá\", imóvel Alianza Urbanhub Mauá, Av. Papa João XXIII nº 3.580). Cada série tem seu PRÓPRIO Termo de Securitização, sua própria Escritura de CCI, seu próprio Contrato de Alienação Fiduciária de Imóvel e (no caso de Mauá) seu próprio Contrato de Cessão de Créditos Imobiliários / Compromisso de Venda e Compra -- não é uma operação com um único TS guarda-chuva. As duas séries compartilham garantias entre si via \"Instrumento Particular de Compartilhamento de Garantias e Outras Avenças\" (celebrado em 08/07/2022, conforme citado em outros instrumentos -- esse contrato em si NÃO está presente na pasta) e uma Cessão Fiduciária de Direitos Creditórios comum sobre os aluguéis do imóvel de Guarulhos. A separação por série foi confirmada lendo o corpo de cada documento (cabeçalho \"435ª Série\" vs \"447ª Série\"), não pelos nomes de arquivo, que frequentemente citam apenas \"Mauá\" mesmo quando o conteúdo é da 435ª (GRU) -- ex.: \"TS 19.01.22.pdf\" e \"1º Aditamento TS 19.01.2022.pdf\" são, na verdade, o Termo de Securitização e o 1º aditamento da 435ª Série (GRU), não de Mauá.\n\nDISCREPÂNCIAS DE DATA (nome do arquivo vs. corpo do documento) identificadas -- em todos os casos foi adotada a data declarada no corpo/assinatura do documento, nunca a do nome do arquivo:\n- \"TS 19.01.22.pdf\" (Termo de Securitização 435ª Série/GRU): corpo diz \"São Paulo, 12 de janeiro de 2022\" -- não 19/01.\n- \"1º Aditamento TS 19.01.2022.pdf\" (1º Aditamento ao TS 435ª/GRU): corpo diz \"São Paulo, 18 de janeiro de 2022\" -- não 19/01.\n- \"Cessão Fiduciária de Direitos Creditórios ... i2a_190122...\": corpo diz \"São Paulo, 20 de janeiro de 2022\" -- não 19/01.\n- \"2º Aditamento Contrato de Cessão ... DG 28052024 ... Assinado.pdf\": corpo diz \"São Paulo, 06 de junho de 2024\" -- não 28/05.\n- \"1º Aditamento à AF de Imóvel ... Mauá - 447 ... 28052024 ... Assinado.pdf\": corpo diz \"São Paulo, 06 de junho de 2024\" -- não 28/05 (mesmo padrão do item acima; os dois aditamentos de 28/05 citados nos nomes de arquivo foram, na realidade, assinados em 06/06/2024).\n\nCONFLITO DE DATA ENTRE DOIS DOCUMENTOS (não resolvido com certeza): a ata AGT 05.04.2024 (447ª Série/Mauá) afirma que o \"Instrumento Particular de Alienação Fiduciária de Imóveis em Garantia e Outras Avenças\" (\"Contrato de Alienação Fiduciária de Imóvel Mauá\") foi \"celebrado em 08 de julho de 2022\". Já o próprio 1º Aditamento a esse contrato (fonte primária, que deveria conhecer a data de seu próprio contrato-mãe) afirma em suas Considerações Preliminares que a AF de Imóvel Mauá foi celebrada em \"20 de janeiro de 2022\" (mesma data da AF de Guarulhos, o que é consistente com o padrão de assinatura conjunta das garantias na constituição da operação). Não é possível confirmar com certeza qual das duas datas está correta sem acesso ao contrato original de AF de Imóvel Mauá, que NÃO está presente na pasta; a leitura mais provável é que a ata confundiu essa data com a do Contrato de Compartilhamento de Garantias (também citado na mesma ata como celebrado em 08/07/2022), mas isso é uma inferência, não uma confirmação.\n\nINSTRUMENTOS ORIGINAIS REFERENCIADOS MAS AUSENTES DA PASTA (só seus aditamentos estão presentes, ou nem isso): Termo de Securitização 447ª Série/Mauá (original); Contrato de Alienação Fiduciária de Imóvel Mauá (original); Contrato de Alienação Fiduciária de Imóveis Guarulhos (original) e seu 1º Aditamento (celebrado em 09/02/2022, citado apenas de passagem no 2º Aditamento); Instrumento Particular de Contrato de Cessão de Créditos Imobiliários e Outras Avenças (Mauá, original, e também seu eventual 1º Aditamento -- a pasta pula direto para o 2º); Compromisso de Venda e Compra de Imóvel (CVC) Mauá (original); Escritura de Emissão de CCI (Mauá) -- só aparece uma cópia da CCI nº 001 como Anexo I do 2º Aditamento ao Contrato de Cessão, com \"LOCAL E DATA DE EMISSÃO: São Paulo, 03 de março de 2022\" (um dia antes da assinatura dos demais instrumentos de 04/03/2022 -- não é possível confirmar se há uma escritura própria e independente ou se essa é a única formalização); e o Instrumento Particular de Compartilhamento de Garantias e Outras Avenças (nunca está na pasta, apenas citado).\n\nGAPS na numeração de aditamentos ao TS da 435ª Série (GRU): a pasta contém o 1º Aditamento (18/01/2022) e o 4º Aditamento (12/07/2024) do TS GRU, mas não contém 2º e 3º. A existência de um \"3º aditamento ao TS\" da GRU é corroborada indiretamente pelo dado de carteira (portfolio_data_wrapped.json, covenant \"Fundo de Reserva (GRU)\", campo \"documento\": \"Cláusula 5.2 do 3º aditamento ao TS\") -- mas o arquivo \"3º Aditamento TS.pdf\" desta pasta é, pelo corpo do texto, o 3º aditamento do TS de Mauá (447ª), não da GRU. Ou seja, há pelo menos um 3º aditamento ao TS GRU que não está nesta pasta (e a existência ou não de um 2º aditamento GRU não foi confirmada em nenhum documento lido).\n\nGAP na sequência de atas: a ata AGT 04.08.2022 (435ª/GRU) menciona repetidamente uma \"AGT de 08 de julho\" (de 2022, também da 435ª Série) que aprovou os termos originais do 2º Aditamento à AF Guarulhos e fixou um prazo depois prorrogado nesta ata -- essa ata de 08/07/2022 NÃO está entre os 6 arquivos AGT desta pasta. Da mesma forma, o 4º Aditamento ao TS GRU (12/07/2024) relata, em suas Considerações Preliminares, uma Assembleia Especial de Titulares realizada em 05/04/2024 para a 435ª Série (GRU) -- com pauta parecida mas valores diferentes (carência para 13/03 e 15/03/2024, saldo devedor de R$ 33.153.933,28) da ata AGT 05.04.2024 desta pasta, que é expressamente da 447ª Série (Mauá) (saldo devedor R$ 56.179.430,96). Ou seja, houve DUAS assembleias em 05/04/2024, uma por série, e a pasta contém apenas a de Mauá -- a de GRU está ausente. Ambos os gaps foram registrados como itens próprios na lista de obrigações, sinalizados como \"ata referenciada mas ausente da pasta\".\n\nTrechos com qualidade de OCR ruim (leitura truncada/caracteres substituídos, ex. \"435º\"/\"4352\" em vez de \"435ª\", \"€9\" em vez de \"C9\") foram interpretados por contexto quando o sentido era inequívoco; nenhum número, CNPJ ou valor monetário foi corrigido por inferência -- todos os valores citados nesta análise foram copiados exatamente como aparecem no texto extraído (não confirmado com precisão absoluta apenas quanto à grafia de caracteres OCR isolados, nunca quanto aos números).",
+    "instrumentos": [
+      {
+        "tipo": "termo_securitizacao_gru",
+        "nome": "Termo de Securitização de Créditos Imobiliários da 435ª Série da 4ª Emissão (GRU/Guarulhos) - Virgo Companhia de Securitização (atual Riza Securitizadora)",
+        "data_original": "2022-01-12",
+        "original_presente_na_pasta": true,
+        "nota": "Arquivo \"TS 19.01.22.pdf\". O nome do arquivo sugere 19/01/2022, mas o corpo do documento (cláusula de Data de Emissão e data de assinatura na p. 3216) afirma \"São Paulo, 12 de janeiro de 2022\".",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2022-01-18",
+            "presente_na_pasta": true,
+            "arquivo": "1º Aditamento TS 19.01.2022.pdf",
+            "nota": "Nome do arquivo sugere 19/01/2022; corpo do documento diz \"São Paulo, 18 de janeiro de 2022\"."
+          },
+          {
+            "numero": 2,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Não confirmado se existe. Não localizado nesta pasta nem citado explicitamente em nenhum documento lido."
+          },
+          {
+            "numero": 3,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Sua existência é sugerida indiretamente por portfolio_data_wrapped.json (covenant \"Fundo de Reserva (GRU)\", que cita \"Cláusula 5.2 do 3º aditamento ao TS\" como fonte) -- mas não está presente nesta pasta. O arquivo \"3º Aditamento TS.pdf\" da pasta pertence, na verdade, ao TS da 447ª Série (Mauá), não da GRU (confirmado pelo corpo do texto)."
+          },
+          {
+            "numero": 4,
+            "data": "2024-07-12",
+            "presente_na_pasta": true,
+            "arquivo": "4º Aditamento TS.pdf",
+            "nota": "Formaliza deliberações de uma Assembleia Especial de Titulares da 435ª Série (GRU) realizada em 05/04/2024 (carência 13/03 e 15/03/2024, waiver fee sobre saldo devedor de R$ 33.153.933,28, inclusão da Newmark Brasil como Avaliador Autorizado, alteração da data do laudo de avaliação) -- essa ata específica da GRU de 05/04/2024 NÃO está presente na pasta (só a ata da 447ª/Mauá do mesmo dia está)."
+          }
+        ],
+        "nome_curto": "Termo de Securitização — GRU"
+      },
+      {
+        "tipo": "termo_securitizacao_maua",
+        "nome": "Termo de Securitização de Créditos Imobiliários da 447ª Série da 4ª Emissão (Mauá) - Virgo Companhia de Securitização (atual Riza Securitizadora)",
+        "data_original": "2022-03-04",
+        "original_presente_na_pasta": false,
+        "nota": "O instrumento original não está na pasta; data confirmada por referência cruzada em 3 documentos distintos (ata AGT 05.04.2024, e as Considerações Preliminares do 2º Aditamento ao Contrato de Cessão e do 1º Aditamento à AF de Imóvel Mauá).",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2022-03-11",
+            "presente_na_pasta": true,
+            "arquivo": "1º_Aditamento_ao_Termo_de_Securitização_-_CRI_Mauá_Alianza_(Mauá)_-_i2a_110322_Versão_01_(limpa).doc.pdf"
+          },
+          {
+            "numero": 2,
+            "data": "2022-07-08",
+            "presente_na_pasta": true,
+            "arquivo": "2º Aditamento TS.pdf",
+            "nota": "Trata do compartilhamento de garantias com a 435ª Série (GRU) e da alteração do Compromisso de Venda e Compra Mauá."
+          },
+          {
+            "numero": 3,
+            "data": "2024-06-16",
+            "presente_na_pasta": true,
+            "arquivo": "3º Aditamento TS.pdf",
+            "nota": "Formaliza parte das deliberações da AGT 05.04.2024 (Mauá): nova Tabela de Amortização, inclusão da Newmark Brasil como Avaliador Autorizado (cláusula 6.4.6.3) e nova data do laudo de avaliação (cláusula 6.4.6.1). Não é possível confirmar, pelo texto extraído, se a alteração da fórmula do Fundo de Reserva (cláusula 5.2.1, item (ii)(3) da mesma ata) também foi formalizada neste aditamento -- a lista de cláusulas alteradas não cita a 5.2.1 explicitamente, podendo estar apenas na versão consolidada anexa (Apêndice A), não reproduzida no texto lido."
+          }
+        ],
+        "nome_curto": "Termo de Securitização — Mauá"
+      },
+      {
+        "tipo": "escritura_cci_gru",
+        "nome": "Escritura de Emissão de Cédula de Crédito Imobiliário (CCI nº 001, Série Única) - lastro da 435ª Série (GRU/Guarulhos)",
+        "data_original": "2022-01-12",
+        "original_presente_na_pasta": true,
+        "nota": "Arquivo \"Escritura_de_Emissão_de_CCI...Guarulhos...i2a_120122...\". Data do corpo (12/01/2022) confirma a data sugerida pelo nome do arquivo.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de CCI — GRU"
+      },
+      {
+        "tipo": "escritura_cci_maua",
+        "nome": "Escritura de Emissão de Cédula de Crédito Imobiliário (CCI nº 001, Série Única) - lastro da 447ª Série (Mauá)",
+        "data_original": "2022-03-03",
+        "original_presente_na_pasta": false,
+        "nota": "Não está presente como instrumento próprio nesta pasta. Uma cópia da CCI aparece apenas como Anexo I do \"2º Aditamento Contrato de Cessão\" (Mauá), com \"LOCAL E DATA DE EMISSÃO: São Paulo, 03 de março de 2022\" -- um dia antes da assinatura dos demais instrumentos de Mauá (TS, Contrato de Cessão e CVC, todos de 04/03/2022). Não é possível confirmar se existe uma escritura autônoma equivalente à de Guarulhos ou se a formalização ocorreu de outra forma.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Escritura de CCI — Mauá"
+      },
+      {
+        "tipo": "af_imovel_gru",
+        "nome": "Contrato de Alienação Fiduciária de Imóveis em Garantia e Outras Avenças - Imóveis Guarulhos (Ellece Empreendimentos / Alianza Urban Hub Renda FII / Virgo)",
+        "data_original": "2022-01-20",
+        "original_presente_na_pasta": false,
+        "nota": "Instrumento original não presente na pasta; data confirmada nas Considerações Preliminares do próprio 2º Aditamento (item \"a\").",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2022-02-09",
+            "presente_na_pasta": false,
+            "nota": "Citado apenas de passagem nas Considerações Preliminares do 2º Aditamento (item \"c\") como tendo sido celebrado para atender exigências do 1º Cartório de Registro de Imóveis de Guarulhos. Não está presente na pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2022-08-04",
+            "presente_na_pasta": true,
+            "arquivo": "v.2 - FII-Alianza-UrbanHub-2º-Aditamento-AF-de-Imovel-CRI-Maua-Alianza-(Guarulhos).pdf",
+            "nota": "Exclui os itens 5.5.1 a 5.5.5 e redireciona o sobejo da excussão da garantia para a Cessão Fiduciária de Direitos Creditórios Guarulhos / Contrato de Compartilhamento de Garantias. Formaliza deliberação da AGT 04.08.2022 (e de uma AGT anterior de 08/07/2022 da 435ª Série, não presente na pasta)."
+          }
+        ],
+        "nome_curto": "Alienação Fiduciária de Imóveis — Guarulhos"
+      },
+      {
+        "tipo": "af_imovel_maua",
+        "nome": "Contrato de Alienação Fiduciária de Imóvel em Garantia e Outras Avenças - Imóvel Mauá (HBS Participações / Alianza Urban Hub Renda FII / Virgo)",
+        "data_original": "2022-01-20",
+        "original_presente_na_pasta": false,
+        "nota": "Data conforme Considerações Preliminares do próprio 1º Aditamento (item \"a\"), que deveria ser a fonte mais confiável quanto à data de seu contrato-mãe. Há CONFLITO com a ata AGT 05.04.2024, que menciona esse mesmo contrato como \"celebrado em 08 de julho de 2022\" -- não é possível confirmar com certeza qual data está correta sem acesso ao contrato original (ausente da pasta); ver metodologia_nota da operação para detalhes.",
+        "gap": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2024-06-06",
+            "presente_na_pasta": true,
+            "arquivo": "1º Aditamento à AF de Imóvel - CRI Mauá Alianza (Mauá - 447) 28052024 (v. limpa) chancelada-Assinado.pdf",
+            "nota": "Nome do arquivo sugere 28/05/2024; corpo do documento diz \"São Paulo, 06 de junho de 2024\". Formaliza a inclusão da Newmark Brasil como Avaliador Autorizado (cláusula 3.12.1), deliberada na AGT 05.04.2024. Campos de nome/CPF do Devedor na tabela de assinaturas aparecem em branco no texto extraído, mas o \"Manifesto de Assinaturas\" (Assinador Registro de Imóveis) ao final do arquivo lista os signatários reais com CPF, confirmando tratar-se de instrumento executado, não de minuta."
+          }
+        ],
+        "nome_curto": "Alienação Fiduciária de Imóvel — Mauá"
+      },
+      {
+        "tipo": "cessao_fiduciaria_creditos_gru",
+        "nome": "Cessão Fiduciária de Direitos Creditórios em Garantia e Outras Avenças (aluguéis do imóvel de Guarulhos)",
+        "data_original": "2022-01-20",
+        "original_presente_na_pasta": true,
+        "nota": "Arquivo \"Cessão_Fiduciária...i2a_190122...\". Nome sugere 19/01/2022; corpo do documento diz \"São Paulo, 20 de janeiro de 2022\". Segundo dado de carteira (portfolio_data_wrapped.json), este contrato está sujeito a um \"Aditamento Semestral da Cessão Fiduciária\", celebrado em 15/jun e 15/dez de cada ano -- esses aditamentos periódicos (rotineiros, de atualização cadastral dos créditos cedidos) não estão numerados/individualizados nesta pasta e não é possível confirmar se algum deles está fisicamente presente aqui; nenhum aditamento a este contrato específico foi identificado nos 18 documentos lidos.",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Cessão Fiduciária de Direitos Creditórios — GRU"
+      },
+      {
+        "tipo": "contrato_cessao_creditos_imobiliarios_maua",
+        "nome": "Instrumento Particular de Contrato de Cessão de Créditos Imobiliários e Outras Avenças (Mauá) - cessão pela HBS Participações à Virgo dos créditos do CVC, com emissão da CCI",
+        "data_original": "2022-03-04",
+        "original_presente_na_pasta": false,
+        "nota": "Instrumento distinto da \"Cessão Fiduciária de Direitos Creditórios\" (que é garantia sobre aluguéis) -- este é o contrato de cessão dos créditos imobiliários que lastreiam a CCI/CRI Mauá. Original não presente na pasta; data confirmada nas Considerações Preliminares do 2º Aditamento (item \"i\").",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": null,
+            "presente_na_pasta": false,
+            "nota": "Não confirmado se existe; a pasta pula diretamente do contrato original para o 2º Aditamento."
+          },
+          {
+            "numero": 2,
+            "data": "2024-06-06",
+            "presente_na_pasta": true,
+            "arquivo": "2º Aditamento Contrato de Cessão - CRI Mauá Alianza (Mauá - 447) - DG 28052024 chancelada-Assinado.pdf",
+            "nota": "Nome do arquivo sugere 28/05/2024; corpo do documento diz \"São Paulo, 06 de junho de 2024\". Formaliza as deliberações de carência/waiver fee/Tabela de Amortização da AGT 05.04.2024 (Mauá). Contém como Anexo I uma cópia da CCI nº 001, datada de 03/03/2022."
+          }
+        ],
+        "nome_curto": "Contrato de Cessão de Créditos — Mauá"
+      },
+      {
+        "tipo": "compromisso_venda_compra_maua",
+        "nome": "Instrumento Particular de Compromisso de Venda e Compra de Imóvel e Outras Avenças (CVC) - Mauá (HBS Participações vendedora / Alianza Urban Hub Renda FII compradora)",
+        "data_original": "2022-03-04",
+        "original_presente_na_pasta": false,
+        "nota": "Original não presente na pasta; data confirmada nas Considerações Preliminares do próprio 1º Aditamento (item \"a\").",
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2022-03-04",
+            "presente_na_pasta": true,
+            "arquivo": "1º_Aditamento_ao_CVC_-_CRI_Mauá_Alianza_(Mauá)_-_i2a_040322_Versão_Sign_Off_(limpa).pdf",
+            "nota": "Celebrado no MESMO DIA do Compromisso original (04/03/2022) -- não é um erro de leitura, o próprio texto confirma ambas as datas iguais; provavelmente parte do mesmo fechamento/estruturação simultânea da operação de securitização. Formaliza a opção pela estruturação via securitização (forma de pagamento da Parcela Securitização)."
+          }
+        ],
+        "nome_curto": "Compromisso de Venda e Compra — Mauá"
+      },
+      {
+        "tipo": "compartilhamento_garantias",
+        "nome": "Instrumento Particular de Compartilhamento de Garantias e Outras Avenças (entre a 435ª Série/GRU e a 447ª Série/Mauá)",
+        "data_original": "2022-07-08",
+        "original_presente_na_pasta": false,
+        "gap": true,
+        "nota": "Contrato central ao mecanismo de sobejo cruzado entre as garantias das duas séries (confirmado em portfolio_data_wrapped.json: \"Compartilhamento de Garantias entre o CRI Guarulhos (435ª Série) e o CRI Mauá (447ª Série), com mecanismo de sobejo cruzado\"). Autorizado pela AGT 14.03.2022 (GRU), mas o instrumento em si NUNCA está presente nesta pasta -- apenas citado por nome e data em outros documentos (ex.: 2º Aditamento à AF Guarulhos, que informa ter sido \"celebrado ... em 08 de julho de 2022\").",
+        "aditamentos_conhecidos": [],
+        "nome_curto": "Compartilhamento de Garantias (GRU + Mauá)"
+      }
+    ]
+  },
+  "Calçada": {
+    "metodologia_nota": "Todos os 8 instrumentos originais prefixados '1ªE_183ªS - CALÇADA - ...' têm data de celebração CONFIRMADA no corpo/página de assinaturas em 20/12/2019 (não apenas no cabeçalho): TS (capa), CCB (Cláusula de Foro + 'Data de Emissão'), Escritura de CCI, AF Imóveis, AF Quotas, Cessão Fiduciária de Direitos Creditórios e Cessão de Crédito — todos '20 de dezembro de 2019'. A partir dos considerandos ('CONSIDERAÇÕES PRELIMINARES') dos aditamentos de 08/09/2021 e de 26/02/2025, foi possível reconstruir que TODOS esses instrumentos (exceto a Escritura de CCI, que nunca aparece como aditada em nenhum documento da pasta) tiveram um 1º Aditamento em 24/06/2020 que NÃO está fisicamente na pasta (conhecido só por citação — ex.: 'conforme aditado pela primeira vez em 24 de junho de 2020'). Portanto o padrão é: Original (20/12/2019, presente) -> 1º Aditamento (24/06/2020, AUSENTE da pasta) -> 2º Aditamento (08/09/2021, presente, lote '210908') -> 3º Aditamento (26/02/2025, presente, lote 'Terceiro Aditamento'/'TS-3-Aditamento'). Essa 3ª rodada (26/02/2025) foi autorizada por uma Assembleia realizada em 18/12/2024 e rerratificada em 19/12/2024 — essa ata NÃO está na pasta (só é citada nos considerandos dos aditamentos de 26/02/2025); é uma ata DIFERENTE e ANTERIOR à única ata física da pasta (08/04/2026, Repactuação/condomínio residencial). DESAMBIGUAÇÃO IMPORTANTE (Cessão Fiduciária): existem DUAS cadeias de 'Cessão Fiduciária de Direitos Creditórios' distintas, com fiduciantes e contratos-base diferentes, embora usem títulos quase idênticos: (A) o contrato original da pasta ('1ªE_183ªS - CALÇADA - Cessão Fiduciária.pdf'), fiduciante Hotel Vogue Barra da Tijuca Ltda/CNPJ 28.342.548 (hoje 'Square Design Hotel Ltda.'), aditado em 24/06/2020 (ausente), 08/09/2021 ('2º Aditamento Cessão Fiduciária de Direitos Creditórios - Assinado.pdf') e 26/02/2025 ('Terceiro Aditamento ao Instrumento Particular de Cessão Fiduciária de Direitos Creditórios em Garantias e Outras Avenças.pdf' — confirmado pelo próprio considerando, que rotula o contrato-base como 'Contrato de Cessão Fiduciária de Direitos Creditórios'); e (B) o 'Contrato de Cessão Fiduciária de Conta Vinculada', instrumento SEPARADO, celebrado em 24/06/2020 (não 2019) entre a Habitasec e, originalmente, a HOTELARIA BRASIL LTDA. (CNPJ 04.463.276/0001-67 — terceira empresa, distinta das duas acima), com Hotel Vogue Barra da Tijuca e Calçada como intervenientes anuentes. Esse original NÃO está na pasta. Foi aditado em 08/09/2021 (arquivo '210908 ... 1º Aditamento à Cessão Fiduciária Conta Vinculada - Assinado.pdf' — o próprio texto confirma ser o '1º' desta cadeia B e registra a SUBSTITUIÇÃO da fiduciante Hotelaria Brasil Ltda. pela Vogue Hotelaria e Comércio Ltda./CNPJ 19.442.211, hoje 'Square Hotelaria Eventos Ltda.'), depois em 26/02/2025 (arquivo 'Segundo Aditamento ao Instrumento Particular de Cessão Fiduciária de Direitos Creditórios em Garantia e Outras Avenças.pdf' — apesar do título genérico idêntico ao da cadeia A, o próprio texto se autodefine como aditamento do 'Contrato de Cessão Fiduciária de Conta Vinculada, conforme aditado em 08 de setembro de 2021', confirmando que pertence à cadeia B, não é duplicata do 2º Aditamento de 08/09/2021 da cadeia A) e, por fim, um 3º Aditamento AINDA EM MINUTA (ver instrumento 'cessao_fiduciaria_conta_vinculada' abaixo). CONCLUSÃO da desambiguação pedida: os dois arquivos 'Segundo Aditamento' (o de 08/09/2021, lote 210908, cadeia A, e o de 26/02/2025, cadeia B) NÃO são duplicatas um do outro — são aditamentos de dois contratos-base diferentes, apesar de títulos quase idênticos; a numeração 'Segundo'/'2º' é coincidente para as duas cadeias, não redundante. GAP ADICIONAL DESCOBERTO (9º instrumento fora da lista original de 8): os considerandos dos aditamentos de 26/02/2025 (Segundo/Terceiro Aditamentos) e o 3º Aditamento ao TS mencionam um QUINTO 'Contrato de Garantia' - o 'Instrumento Particular de Cessão Fiduciária de Direitos Creditórios de Recebíveis Venda e de Recebíveis Exploração e Outras Avenças' ('Contrato de Cessão Fiduciária de Recebíveis Venda e de Recebíveis Exploração') - que garante os recebíveis de venda/exploração das frações de tempo do Hotel Vogue. Não há, em nenhum dos 22 arquivos da pasta, nem o original nem qualquer aditamento deste instrumento com esse nome; sua data de celebração não pôde ser confirmada em nenhum trecho lido (não é possível confirmar). A ata de 08/04/2026 cita esse mesmo contrato com um nome ligeiramente diferente ('Contrato de Cessão Fiduciária de Recebíveis Venda e Recebíveis Locação'/'Cessão Fiduciária de Recebíveis Locação e Recebíveis Exploração') — não é possível confirmar se é apenas variação de redação ou um instrumento adicional distinto; sinalizado como incerteza, não assumido como igual. GAP ADICIONAL (Alienação Fiduciária de Imóveis): nenhum aditamento a este instrumento está fisicamente na pasta, mas várias fontes (aditamentos de 26/02/2025 e a ata de 08/04/2026, item 7.3.II) referenciam aditamento(s) pendentes/a celebrar (liberação de matrículas de frações de tempo; futura 'Aditamento AF - Apartamentos' para a conversão hoteleira->residencial) — não é possível confirmar se algum desses já foi formalmente celebrado. NOTA SOBRE A CCB: existem 2 vias físicas do mesmo título de crédito (mesmo número 1912270155/CEI) - 'Negociável' e 'Não Negociável' - tratadas aqui como 2 entradas de instrumento pois o enunciado pediu a confirmação de 8 instrumentos distintos; porém os aditamentos (2º e 3º) encontrados na pasta são arquivos ÚNICOS que tratam 'a CCB' genericamente, sem distinguir via — não é possível confirmar se ambas as vias físicas foram re-endossadas/carimbadas em conjunto com cada aditamento ou se apenas uma via consolidada é mantida a partir de determinado momento. ATA: a única ata da pasta ('AGT (Repactuação, condomínio residencial)') traz uma inconsistência interna de data: o cabeçalho e a página de assinaturas dizem 'REALIZADA EM 08 DE ABRIL DE 2026', mas a linha de fechamento do corpo diz 'São Paulo, 07 de abril de 2026' — não é possível confirmar qual data é a efetivamente correta; adotou-se 08/04/2026 (data repetida 2x, inclusive na página de assinaturas) como a mais provável, mas a divergência é sinalizada. Adicionalmente, a minuta (docx) do 3º Aditamento à Cessão Fiduciária de Conta Vinculada cita essa mesma assembleia como 'realizada em 02 de abril de 2026' — uma TERCEIRA data diferente das duas acima; não é possível confirmar a causa dessa discrepância (possível erro de digitação na minuta, ou resquício de versão anterior do documento).",
+    "instrumentos": [
+      {
+        "tipo": "termo_securitizacao",
+        "nome": "Termo de Securitização de Créditos Imobiliários dos CRI da 183ª Série da 1ª Emissão (Habitasec Securitizadora S.A.)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2020-06-24",
+            "presente_na_pasta": false,
+            "nota": "Conhecido apenas por citação nos considerandos dos aditamentos posteriores ('conforme aditado em 24 de junho de 2020'); não está na pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 2º Aditamento Termo de Securitização - Assinado.pdf"
+          },
+          {
+            "numero": 3,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "CRI+-+1E183S+-+CALCADA+-+TS+-+3+Aditamento.pdf",
+            "nota": "Data de celebração confirmada na página de assinaturas ('São Paulo, 26 de fevereiro de 2025'), embora o nome do arquivo não traga data. Decorre de Assembleia de Titulares de CRI realizada em 18/12/2024 e rerratificada em 19/12/2024 — essa ata NÃO está na pasta (conhecida só por citação nos considerandos deste próprio aditamento). É anterior e distinta da única ata física da pasta (08/04/2026)."
+          }
+        ],
+        "gap": "Falta o 1º Aditamento (24/06/2020) e a ata de 18-19/12/2024 que autorizou o 3º Aditamento; nenhum dos dois está na pasta.",
+        "nome_curto": "Termo de Securitização"
+      },
+      {
+        "tipo": "escritura_cci",
+        "nome": "Instrumento Particular de Emissão de Cédula de Crédito Imobiliário Integral sem Garantia Real Imobiliária e Fidejussória, sob a Forma Escritural (Escritura de CCI)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "nota": "Nenhum aditamento a este instrumento foi encontrado ou é referenciado em nenhum outro documento da pasta — parece nunca ter sido aditado (diferente dos demais 7 instrumentos, todos com histórico de aditamentos).",
+        "nome_curto": "Escritura de CCI"
+      },
+      {
+        "tipo": "cessao_fiduciaria_direitos_creditorios",
+        "nome": "Instrumento Particular de Cessão Fiduciária de Direitos Creditórios em Garantia e Outras Avenças — 'Contrato de Cessão Fiduciária de Direitos Creditórios' (Fiduciante: Hotel Vogue Barra da Tijuca Ltda., atual 'Square Design Hotel Ltda.', CNPJ 28.342.548/0001-39)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2020-06-24",
+            "presente_na_pasta": false,
+            "nota": "Conhecido só por citação ('conforme aditado pela primeira vez em 24 de junho de 2020'); ausente da pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 2º Aditamento Cessão Fiduciária de Direitos Creditórios - Assinado.pdf"
+          },
+          {
+            "numero": 3,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "Terceiro Aditamento ao Instrumento Particular de Cessão Fiduciária de Direitos Creditórios em Garantias e Outras Avenças.pdf",
+            "nota": "Data confirmada na página de assinaturas ('São Paulo, 26 de fevereiro de 2025'). CUIDADO: existe um outro instrumento com título quase idêntico ('Cessão Fiduciária de Conta Vinculada', ver instrumento separado abaixo) — este aqui é o correto para a cadeia ORIGINAL de Direitos Creditórios, confirmado pelo próprio considerando ('Contrato de Cessão Fiduciária de Direitos Creditórios')."
+          }
+        ],
+        "gap": "Falta o 1º Aditamento (24/06/2020).",
+        "nome_curto": "Cessão Fiduciária — Direitos Creditórios"
+      },
+      {
+        "tipo": "cessao_fiduciaria_conta_vinculada",
+        "nome": "Instrumento Particular de Cessão Fiduciária de Direitos Creditórios em Garantia e Outras Avenças — 'Contrato de Cessão Fiduciária de Conta Vinculada' (instrumento SEPARADO do anterior, apesar do título quase idêntico; fiduciante originalmente Hotelaria Brasil Ltda., substituída em 2021 por Vogue Hotelaria e Comércio Ltda., atual 'Square Hotelaria Eventos Ltda.', CNPJ 19.442.211/0001-02)",
+        "data_original": "2020-06-24",
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 1º Aditamento à Cessão Fiduciária Conta Vinculada - Assinado.pdf",
+            "nota": "O próprio texto confirma ser o '1º Aditamento' desta cadeia (Conta Vinculada) e registra a substituição da fiduciante Hotelaria Brasil Ltda. pela Vogue Hotelaria e Comércio Ltda."
+          },
+          {
+            "numero": 2,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "Segundo Aditamento ao Instrumento Particular de Cessão Fiduciária de Direitos Creditórios em Garantia e Outras Avenças.pdf",
+            "nota": "DESAMBIGUAÇÃO: apesar do nome de arquivo genérico (idêntico em título ao 2º Aditamento de 08/09/2021 da OUTRA cadeia, 'Direitos Creditórios'), o texto deste documento se autodefine como aditamento ao contrato 'conforme aditado em 08 de setembro de 2021 (\"Contrato de Cessão Fiduciária de Conta Vinculada\")' — confirmando que é o 2º Aditamento da cadeia Conta Vinculada, não uma duplicata do 2º Aditamento da cadeia de Direitos Creditórios (que é o arquivo do lote '210908'). Data de assinatura confirmada no corpo: 'São Paulo, 26 de fevereiro de 2025'."
+          },
+          {
+            "numero": 3,
+            "data": null,
+            "presente_na_pasta": true,
+            "arquivo": "3 Aditamento CF Conta Vinculada CRI Calçada - ELA Adv 29 04 2026.docx",
+            "nota": "MINUTA NÃO ASSINADA (rascunho de advogado — 'ELA Adv' no nome do arquivo). O campo de data de celebração está em branco no próprio texto ('São Paulo, [=] de abril de 2026' e 'celebrado em [=] de abril de 2026'), sem qualquer bloco de assinatura preenchido, nome, CPF ou identificador de assinatura digital (DocuSign/D4Sign) — não há evidência de que tenha sido efetivamente assinado. Implementa a deliberação (iv)/item 7.3.I da ata de 08/04/2026 da pasta (prazo de celebração: até 30 dias da assembleia, ou seja, por volta de 08/05/2026) — como hoje é 16/09/2026, esse prazo já teria vencido há mais de 4 meses caso o documento permaneça não assinado; não é possível confirmar, a partir dos documentos disponíveis, se uma versão assinada existe fora desta pasta. O próprio rascunho cita a data da assembleia como '02 de abril de 2026', divergente das datas '07' e '08 de abril de 2026' que aparecem na ata física da pasta — divergência sinalizada, não resolvida."
+          }
+        ],
+        "gap": "Falta o contrato original (24/06/2020); o 3º Aditamento presente na pasta é apenas uma minuta não assinada, sem confirmação de execução.",
+        "nome_curto": "Cessão Fiduciária — Conta Vinculada"
+      },
+      {
+        "tipo": "cessao_credito",
+        "nome": "Instrumento Particular de Cessão de Créditos Imobiliários e Outras Avenças (QI Sociedade de Crédito Direto S.A. -> Habitasec Securitizadora S.A.)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2020-06-24",
+            "presente_na_pasta": false,
+            "nota": "Conhecido só por citação; ausente da pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 2º Aditamento Cessão de Créditos - Assinado.pdf"
+          },
+          {
+            "numero": 3,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "Terceiro Aditamento ao Instrumento Particular de Cessão de Créditos Imobiliários e Outras Avenças.pdf",
+            "nota": "Data confirmada na página de assinaturas."
+          }
+        ],
+        "gap": "Falta o 1º Aditamento (24/06/2020).",
+        "nome_curto": "Cessão de Créditos Imobiliários"
+      },
+      {
+        "tipo": "af_imovel",
+        "nome": "Instrumento Particular de Alienação Fiduciária de Imóvel em Garantia e Outras Avenças (Frações de Tempo do Hotel Vogue / Imóvel matrícula 426.361)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [],
+        "gap": "Nenhum aditamento a este instrumento está fisicamente na pasta, embora ele certamente já deveria ter sido aditado pelo menos 1x (não é possível confirmar datas/quantidade). Diversos outros documentos da pasta (aditamentos de 26/02/2025 e a ata de 08/04/2026, item 7.3.II) mencionam aditamento(s) pendentes ou a celebrar a este contrato (liberação de matrículas de frações de tempo específicas; futuro 'Aditamento AF - Apartamentos' para viabilizar a conversão do Imóvel Prédio H de hoteleiro para residencial) — não é possível confirmar se algum já foi formalmente celebrado fora da pasta.",
+        "nome_curto": "Alienação Fiduciária de Imóvel"
+      },
+      {
+        "tipo": "af_quotas",
+        "nome": "Instrumento Particular de Alienação Fiduciária de Quotas e Outras Avenças (quotas da Hotel Vogue Barra da Tijuca Ltda./atual Square Design Hotel Ltda.)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2020-06-24",
+            "presente_na_pasta": false,
+            "nota": "Conhecido só por citação: retirou Pedro Manuel Rio Tinto de Matos do rol de fiduciantes e reduziu o percentual alienado de 100% para 86,87% das quotas, em razão de Evento de Liberação de Garantia (Cláusula 7.4 da CCB). Não está na pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 2º Aditamento Alienação Fiduciária de Quotas - Assinado.pdf"
+          },
+          {
+            "numero": 3,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "Terceiro Aditamento ao Instrumento Particular de Alienação Fiduciária de Quotas e Outras Avenças.pdf",
+            "nota": "Data confirmada na página de assinaturas. Partes consistentes com o 1º/2º Aditamento (sem Pedro, com Luiz Carlos e Ana Isabel Rio Tinto de Matos), confirmando a mesma cadeia."
+          }
+        ],
+        "gap": "Falta o 1º Aditamento (24/06/2020).",
+        "nome_curto": "Alienação Fiduciária de Quotas"
+      },
+      {
+        "tipo": "ccb",
+        "nome": "Cédula de Crédito Bancário nº 1912270155/CEI — via 'Negociável' (QI Sociedade de Crédito Direto S.A. -> Calçada)",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2020-06-24",
+            "presente_na_pasta": false,
+            "nota": "Conhecido só por citação; ausente da pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 2º Aditamento CCB - Assinado.pdf",
+            "nota": "Arquivo único, sem distinção de via (negociável/não negociável) — trata 'a CCB' como título único."
+          },
+          {
+            "numero": 3,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "Terceiro Aditamento à Cédula de Crédito Bancário nº1912270155CEI.pdf",
+            "nota": "Data confirmada na página de assinaturas. Também arquivo único, sem distinção de via."
+          }
+        ],
+        "gap": "Falta o 1º Aditamento (24/06/2020).",
+        "nota": "Existem 2 vias físicas do mesmo título (mesmo número 1912270155/CEI): 'Negociável' e 'Não Negociável' (ver instrumento separado abaixo). Os aditamentos 2º e 3º encontrados na pasta são arquivos únicos que tratam da CCB genericamente — não é possível confirmar se ambas as vias físicas foram re-endossadas/carimbadas junto com cada aditamento.",
+        "nome_curto": "CCB — via Negociável"
+      },
+      {
+        "tipo": "ccb",
+        "nome": "Cédula de Crédito Bancário nº 1912270155/CEI — via 'Não Negociável'",
+        "data_original": "2019-12-20",
+        "original_presente_na_pasta": true,
+        "aditamentos_conhecidos": [
+          {
+            "numero": 1,
+            "data": "2020-06-24",
+            "presente_na_pasta": false,
+            "nota": "Mesmo aditamento citado para a via Negociável — não está na pasta."
+          },
+          {
+            "numero": 2,
+            "data": "2021-09-08",
+            "presente_na_pasta": true,
+            "arquivo": "210908 - CRI Habitasec - Calçada - 2º Aditamento CCB - Assinado.pdf",
+            "nota": "Mesmo arquivo do 2º Aditamento listado para a via Negociável (documento único, sem via distinta)."
+          },
+          {
+            "numero": 3,
+            "data": "2025-02-26",
+            "presente_na_pasta": true,
+            "arquivo": "Terceiro Aditamento à Cédula de Crédito Bancário nº1912270155CEI.pdf",
+            "nota": "Mesmo arquivo do 3º Aditamento listado para a via Negociável."
+          }
+        ],
+        "gap": "Falta o 1º Aditamento (24/06/2020).",
+        "nota": "Ver nota da via 'Negociável' acima sobre o compartilhamento dos mesmos arquivos de aditamento entre as duas vias.",
+        "nome_curto": "CCB — via Não Negociável"
+      },
+      {
+        "tipo": "cessao_fiduciaria_recebiveis_venda_exploracao",
+        "nome": "Instrumento Particular de Cessão Fiduciária de Direitos Creditórios de Recebíveis Venda e de Recebíveis Exploração e Outras Avenças",
+        "data_original": null,
+        "original_presente_na_pasta": false,
+        "aditamentos_conhecidos": [],
+        "nota": "9º instrumento/garantia da operação, descoberto por referência cruzada — NÃO fazia parte da lista original de 8 instrumentos e não corresponde a nenhum dos 22 arquivos da pasta. É citado como um dos 'Contratos de Garantia'/'Garantias Reais' nos considerandos do 2º Aditamento à Cessão Fiduciária de Conta Vinculada (26/02/2025) e nos 3 Aditamentos de 26/02/2025 (TS, CCB, Cessão de Créditos, AF Quotas, Cessão Fiduciária de Direitos Creditórios), garantindo os recebíveis de venda e de exploração hoteleira das frações de tempo do Hotel Vogue. Não foi possível confirmar sua data de celebração nem localizar o instrumento original ou qualquer aditamento com esse nome em nenhum dos 22 documentos lidos. A ata de 08/04/2026 cita um contrato de nome ligeiramente diferente ('Contrato de Cessão Fiduciária de Recebíveis Venda e Recebíveis Locação'/'Cessão Fiduciária de Recebíveis Locação e Recebíveis Exploração') — não é possível confirmar se é o mesmo contrato com nome abreviado/alterado ou um instrumento adicional distinto; tratado aqui como incerteza explícita, não como equivalência assumida.",
+        "gap": "Instrumento inteiramente ausente da pasta (nem original, nem aditamentos), conhecido apenas por citação em definições de outros contratos.",
+        "nome_curto": "Cessão Fiduciária — Recebíveis Venda/Exploração"
+      }
+    ]
+  }
+}

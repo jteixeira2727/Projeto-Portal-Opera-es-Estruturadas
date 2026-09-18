@@ -24,6 +24,43 @@ Ao contrário da Jardins FL2 e da Renda Residencial FL2 (que nasceram como deal 
 
 **Confirmação de que é renda pura (não "aluguéis e vendas")**: o texto descritivo do dado financeiro (`sobre_operacao`) fala em "cessão fiduciária de recebíveis (aluguéis e vendas)", o que parecia contradizer a ideia de deal de renda puro. Lendo o Contrato de Cessão Fiduciária de Recebíveis diretamente: os "Direitos Creditórios Cedidos Fiduciariamente" são só (i) **Direitos Creditórios Locação** (aluguéis dos Contratos de Locação) e (ii) **Direitos Creditórios da Vendedora** — que, igual ao conceito equivalente já mapeado na Jardins FL2, **não é receita de venda de unidades pela operação**, e sim um direito de indenização/garantia contra a "Vendedora" (quem vendeu os imóveis originalmente pra Promontoria Imóveis 4) por eventual evicção ou outras perdas, nos termos do Compromisso e da Escritura de Compra e Venda originais. Ou seja: **confirmado, não há cascata de vendas nem receita de venda de unidades nesta operação** — a menção a "vendas" no dado financeiro é sobre essa garantia contingente, não sobre um fluxo operacional de venda de estoque.
 
+## Metodologia de cálculo da dívida (Escritura de Emissão de Debêntures, Cláusula 7 — espelhada 1:1 na Remuneração/Amortização dos CRI no TS)
+
+Confirmado por leitura direta da Escritura: as Debêntures (e os CRI, que as espelham integralmente — mesma taxa, mesmas fórmulas, cf. TS Cláusulas 4.2/4.3 e 6.x) usam uma estrutura clássica de **atualização mensal por IPCA + juros prefixados exponenciais em Dias Úteis**, com um cronograma de amortização **pré-fixado no Anexo V** (não é SAC, Price, nem pass-through do caixa de locação) e uma multa de resgate antecipado que **varia conforme o motivo do resgate**.
+
+### Atualização monetária (Cláusula 7.14) — `VNa = VNb × C`
+
+`C = (NIk / NIk-1)^(dup/dut)`, onde `NIk` é o número-índice do IPCA do **segundo mês imediatamente anterior** à data de cálculo (defasagem M-2 — igual à Pirelli), `dup` = Dias Úteis decorridos desde a última Data de Pagamento (ou Primeira Integralização) e `dut` = Dias Úteis no período entre Datas de Aniversário (23 Dias Úteis na primeira, por definição contratual). **Periodicidade: mensal** (diferente da Pirelli, que atualiza só uma vez por ano em dezembro — aqui o IPCA é incorporado todo mês). Índice substituto em caso de indisponibilidade do IPCA por mais de 10 Dias Úteis: decidido em Assembleia de Debenturista/CRI; sem substituto acordado, resgate compulsório em até 20 dias pelo VNa + Remuneração, sem multa.
+
+### Juros Remuneratórios (Cláusula 7.15) — `J = VNa × (Fator Juros − 1)`
+
+Taxa de **7,85% a.a., base 252 Dias Úteis** (não 360 dias corridos), capitalização **exponencial** pro rata temporis por Dias Úteis decorridos (`dup`) desde a Primeira Integralização ou a última Data de Pagamento. `Fator Juros = (Spread/100 + 1)^(dup/252)`, com Spread = 7,8500. **Diferença relevante frente à Pirelli**: lá a capitalização de juros é por **dias corridos** (convenção 30/360); aqui é por **Dias Úteis base 252** — convenções distintas, não comparáveis diretamente sem anualizar. Pagamento: **mensal**, no Anexo V, 1ª parcela em 21/01/2021.
+
+### Amortização (Cláusula 7.13 + Anexo V) — tabela pré-fixada, perfil "quase-bullet"
+
+**Não é SAC/Price nem atrelada ao caixa de locação recebido** — é uma tabela de `Taxa de Amortização (TAi)` fechada no Anexo V, com **72 parcelas mensais** (11/12/2020 a 21/12/2026), em 3 fases bem distintas (conferido linha a linha no Anexo V):
+
+1. **Períodos 1–24 (jan/2021 a dez/2022)**: `TAi = 0,3333%` por período — amortização linear de **8% do principal** ao longo dos 2 primeiros anos (saldo cai de R$ 1.000,00 para R$ 923,00 por R$ 1.000,00 de VN original).
+2. **Períodos 25–71 (jan/2023 a nov/2026, ~4 anos)**: `TAi = 0,0000%` — **carência total de amortização**, só paga juros mensalmente (`Preço Unitário` e `Saldo Devedor` ficam travados em R$ 923,00/parcela desde jan/2023). Esse é o período em que a operação está hoje (jul/26).
+3. **Período 72 — 21/12/2026 (Data de Vencimento)**: `TAi = 100%` — **bullet final**, quita a totalidade do saldo remanescente numa parcela só.
+
+Ou seja: **é um perfil "quase-bullet"** — só 8% do principal é amortizado ao longo de 6 anos, com os 92% restantes concentrados na última parcela. Isso reforça o ponto de atenção já registrado sobre o vencimento de dez/2026 estar próximo sem sinal de refinanciamento/reestruturação: não há amortização relevante "aliviando" o saldo antes do vencimento, o salto é abrupto.
+
+**Pequena divergência de data**: o Resumo desta memória (via pipeline) registra "Vencimento: 22/12/2026", mas tanto a Cláusula 7.12.1 da Escritura (2.201 dias corridos da Data de Emissão de 11/12/2020) quanto a última linha do Anexo V confirmam **21/12/2026** — 1 dia de diferença, mesmo padrão de pequenas divergências de data já visto entre fontes nesta operação (ver Resumo).
+
+### Multa de resgate/amortização antecipada — 3 fórmulas diferentes conforme a causa (Cláusulas 7.17–7.22)
+
+Não existe uma única "multa de resgate antecipado" nesta operação — o valor muda conforme o motivo:
+
+- **Resgate Antecipado Obrigatório Total** (Cláusula 7.17.4 — gatilho: sobra de recursos não usados na aquisição dos Imóveis Lastro) e **Amortização Extraordinária Obrigatória Saldo da Destinação dos Recursos** (Cláusula 7.22.1(iii) — mesmo gatilho, mas parcial): multa fixa de **2% sobre o VNa** (ou saldo) resgatado/amortizado.
+- **Resgate Antecipado Facultativo Total** (Cláusula 7.18.4) e **Amortização Extraordinária Facultativa** (Cláusula 7.20.4, remete à mesma fórmula da 7.18.4) — a Emissora pode antecipar a seu critério a qualquer momento (até 98% do saldo, no caso da amortização): multa calculada por uma **fórmula de "make-whole"** (prêmio nunca negativo, piso em zero):
+  
+  `Prêmio = Máximo[0 ; (((1+i/100)^(Du/252) / (1+Máximo[Y;B]/100)^(Du/252)) − 1) × VA]`
+  
+  onde `i` = 7,85 (a taxa contratual), `Y` = taxa da NTN-B de duration mais próxima à duration remanescente da parcela, na Data de Apuração (ANBIMA), `B` = 5,85 (piso mínimo pra Y), `Du` = duration remanescente em Dias Úteis até o Vencimento, e `VA` = valor da amortização. Ou seja, o prêmio só é positivo (e devido) se a taxa contratual (7,85%) render mais que a taxa de mercado de referência (Y, com piso de 5,85%) sobre a duration remanescente — mecanismo clássico de compensar o credor pela perda de rentabilidade num resgate antecipado voluntário, mas **nunca gera desconto para a Emissora** (o "Máximo[0;...]" impede prêmio negativo nesta hipótese — diferente da Oferta Facultativa de Resgate, cláusula 7.19, onde a multa negociada *pode* ser negativa).
+  - **Casos sem multa nenhuma** (Cláusula 7.18.1/7.20.1): se o resgate/amortização for feito com (i) recursos da venda de algum Imóvel Lastro; (ii) recursos de venda de ações da Emissora após 24 meses da emissão, com mudança de controle; ou (iii) por gross-up de Tributos.
+- **Amortização Extraordinária Obrigatória LTV** (Cláusula 7.21, o mecanismo de desalavancagem forçada já documentado na seção de covenants abaixo) e **Amortização Extraordinária Obrigatória Sinistro** (Cláusula 7.23, perda total de algum Imóvel): **sem multa** — só principal amortizado + juros pro rata + encargos moratórios se em atraso.
+
 ## Metodologias de cálculo dos covenants (o que a documentação confirma)
 
 ### Fundo de Reserva (TS, Cláusula 15.1/15.1.1) — confirma os "3 PMTs"
@@ -75,3 +112,5 @@ Não há evidência na pasta de nenhuma assembleia posterior a 29/06/2022 — o 
 1. **Vencimento em 22/12/2026 — bem próximo.** Diferente das outras duas operações de renda mapeadas (que já passaram por reestruturação/extensão de prazo), não há nenhum sinal na pasta de que a Itaim tenha sido renegociada — vale confirmar com a Devedora/Securitizadora se há um plano de quitação, refinanciamento ou extensão em andamento, já que faltam poucos meses. **Sem waiver/reestruturação registrada, os covenants oficiais valem como estão**: ICSD < 1,30x ou LTV > 60% (anual) levam a uma AGD ter que decidir sobre vencimento antecipado (não é automático).
 2. **Gap do aditamento à AF de Ações** autorizado em 2022 — ainda não confirmado se foi celebrado (esse instrumento continua sem nenhum documento na pasta).
 3. **Escritura de CCI ainda não está na pasta** — único instrumento "central" (dos 6 originalmente mapeados) que falta.
+4. **Perfil de amortização "quase-bullet" (Anexo V da Escritura)**: só 8% do principal é amortizado nos 2 primeiros anos (jan/2021–dez/2022); de jan/2023 até nov/2026 a operação está em carência total de amortização (só paga juros); os 92% restantes do saldo vencem tudo de uma vez em 21/12/2026. Reforça o ponto 1 acima — não há alívio gradual de saldo chegando o vencimento, o salto de caixa exigido da Devedora é abrupto e total.
+5. **Pequena divergência de data de vencimento**: o Resumo desta memória (pipeline) usa 22/12/2026; a Cláusula 7.12.1 da Escritura e a última linha do Anexo V confirmam **21/12/2026** — vale corrigir no pipeline.

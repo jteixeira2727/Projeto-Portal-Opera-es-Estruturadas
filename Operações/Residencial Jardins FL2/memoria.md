@@ -1,8 +1,8 @@
 # Residencial Jardins FL2 — Memória da Operação
 
-> Leitura derivada de `Pipeline/documents_meta.json`, `Pipeline/obligations_data.json` e leitura direta do texto da ata AEI 23/03/2026 (`documents_data.json`). Não é fonte de dados para o `build_data.py` — é um resumo pra revisão humana. Se os JSONs forem atualizados (nova rodada de leitura de documentos), este arquivo deve ser regenerado.
+> Leitura derivada de `Pipeline/documents_meta.json`, `Pipeline/obligations_data.json` e leitura direta do texto da ata AEI 23/03/2026 (`documents_data.json`), complementada por leitura direta (PDF nativo, sem necessidade de OCR) do 3º Aditamento ao Termo de Securitização, do 4º Aditamento à Escritura de Emissão de Debêntures, do 2º Aditamento à Cessão Fiduciária de Recebíveis (cujo Anexo II — "Descrição das Obrigações Garantidas" — é a fonte primária da metodologia de juros/amortização/vencimento antecipado abaixo, replicado de forma idêntica no 4º Aditamento à AF de Ações) e da ata AGT 24/04/2023. Não é fonte de dados para o `build_data.py` — é um resumo pra revisão humana. Se os JSONs forem atualizados (nova rodada de leitura de documentos), este arquivo deve ser regenerado.
 >
-> Última atualização: 2026-09-17.
+> Última atualização: 2026-09-18.
 
 ## Resumo
 
@@ -29,6 +29,37 @@
 - A ata também tratou do **waiver do Fundo de Reserva** (item já coberto na seção de Obrigações abaixo) — as duas matérias (waiver + reestruturação para deal de estoque) foram deliberadas na mesma assembleia.
 
 **Situação atual (dado financeiro, ago/26):** o portfólio segue **100% locado** (todos os 5 prédios alugados para a Viva) — ou seja, a receita de locação pré-reestruturação continua ativa na prática — mas já há venda de unidades em andamento: **9 unidades vendidas** até jul/26 (R$ 4,22 milhões), sendo a mais recente 1 unidade do Onze22 escriturada em jul/26.
+
+## Metodologia de cálculo — Juros Remuneratórios e Atualização Monetária (Anexo II do Contrato de Cessão Fiduciária / da AF de Ações, refletindo a Escritura de Emissão de Debêntures)
+
+**Juros Remuneratórios (Remuneração das Debêntures)** — taxa prefixada de **9,25% a.a., base 252 Dias Úteis, capitalizados de forma exponencial e cumulativa pro rata temporis por Dias Úteis decorridos**, desde a Primeira Data de Integralização (ou a Data de Pagamento da Remuneração imediatamente anterior) até a data do efetivo pagamento. Pagamento mensal, com a primeira parcela em 24/10/2022 (CRI) / 21/10/2022 (Debêntures) e a última na Data de Vencimento.
+
+**Atualização Monetária** — pelo **IPCA**, mas com metodologia diferente da Pirelli: aqui a atualização é **mensal e contínua** (`pro rata temporis por Dias Úteis`), não concentrada em dezembro. O produto é incorporado automaticamente ao Valor Nominal Unitário (ou seu saldo), formando o "Valor Nominal Unitário Atualizado" — base sobre a qual incidem os juros de 9,25% acima. A fórmula exata (incluindo eventual defasagem do índice) está na Escritura de Emissão de Debêntures original, não presente na pasta — só o resultado consolidado (texto acima) está disponível via Anexo II dos aditamentos lidos.
+
+**Encargos Moratórios** — em caso de impontualidade, incidem cumulativamente: (i) a própria Remuneração das Debêntures (9,25% a.a.) continua correndo pro rata sobre o valor em atraso; (ii) juros de mora de **1% a.m.**; e (iii) multa moratória não compensatória de **2%** sobre o valor devido, além de despesas de cobrança.
+
+## Metodologia de Amortização
+
+**Amortização programada do principal (Cláusula 4.5 do TS / 7.38 da Escritura de Debêntures, incluídas pelo 3º/4º Aditamento)** — não é Price nem SAC puro: segue uma **tabela de taxas de amortização (Tai) pré-fixada no Anexo VII/III**, mas com uma trava adicional de **Saldo Devedor Máximo** por data de aniversário (semestral, de 22/12/2026 a 22/09/2032) — se o saldo projetado ficar acima do máximo tabelado, a Devedora é obrigada a complementar ("aporte"). Fórmula: `AAi = (VNA × Tai) × AMi`, calculada com 8 casas decimais sem arredondamento, onde `AMi` é um fator de ajuste mínimo que garante o Saldo Devedor Máximo tabelado.
+
+- **Carência**: 108 parcelas mensais após um período de carência de 12 meses da Data de Emissão (22/09/2022) — mas, na prática, o cronograma do Anexo A (pós-reestruturação) mostra `Tai = 0%` estendendo-se por quase todo o prazo, com amortizações concentradas semestralmente (dez/jun) em percentuais crescentes: 13,01% (dez/2026), 12,30% (jun/2027), 13,02%, 13,89%, 14,96%, 16,29%, 17,99%, 20,27%, 23,46%, 28,25%, 36,22%, 74,28%, até 100% no vencimento (22/09/2032) — desenho consistente com a lógica de "deal de estoque": amortização concentrada perto do fim, esperando o produto das vendas.
+- **Vencimento final**: 21/09/2032 (3.651 dias da Data de Emissão).
+
+**Amortização Extraordinária Obrigatória Cash Sweep** (mecanismo novo, criado pelo 3º/4º Aditamento — ver seção "Contexto de negócio" acima para a fórmula completa do Cash Sweep Global) — roda em paralelo à tabela acima, mensalmente a partir de mar/2026, e **tem precedência**: qualquer valor apurado pelo Cash Sweep Global amortiza o saldo antes/além do cronograma tabelado. Ao atingir 98% do VN, dispara o **Resgate Total Obrigatório Cash Sweep** (liquidação total).
+
+**Outros mecanismos de amortização extraordinária previstos na Escritura de Debêntures (pré-existentes à reestruturação, ainda vigentes em paralelo)**, conforme Anexo II:
+- **Resgate Antecipado Obrigatório Total**: se parte dos recursos captados não for usada em aquisição/desenvolvimento/reforma/manutenção dos Imóveis, a Devedora deve resgatar a totalidade das Debêntures em até 3 Dias Úteis da notificação.
+- **Resgate Antecipado Facultativo Total / Amortização Extraordinária Facultativa** (até 98% do VN, resgate total vedado parcial): a Devedora pode, a seu critério, após 24 meses da emissão, com aviso prévio de 90 dias, sem multa, usando recursos de venda de Imóveis ou de venda de ações da própria Devedora (com mudança de controle) — ou a qualquer tempo, sem carência, se motivado por gross-up de tributos.
+- **Amortização Extraordinária Obrigatória Aluguel Bruto**: mensal, do mês 2 ao mês 12 da emissão (16/11/2022 a ~out/2023), usando até 65% do Aluguel Bruto do mês — mecanismo do período inicial de rampa, hoje superado pelo Cash Sweep.
+- **Amortização Extraordinária Obrigatória Saldo da Destinação dos Recursos**: idêntica ao Resgate Obrigatório Total, mas para sobras parciais (não a totalidade) dos recursos captados.
+- **Amortização Extraordinária Obrigatória Sinistro**: em caso de sinistro total de qualquer Imóvel (sem reforço de garantia), amortização no valor do imóvel sinistrado.
+- **Aquisição Facultativa de Debêntures em Circulação**: vedada à Devedora.
+
+## Vencimento Antecipado e Resgate Antecipado
+
+**Mecanismo**: nas hipóteses previstas na Escritura de Emissão de Debêntures, a Securitizadora pode declarar **antecipadamente vencidas** as obrigações das Debêntures/CRI e exigir o pagamento imediato do Valor Nominal Unitário Atualizado + Remuneração (9,25% a.a. pro rata) + Encargos Moratórios quando aplicável, observados os prazos de cura indicados na própria Escritura.
+
+⚠️ **A lista fechada dos eventos que caracterizam vencimento antecipado não está disponível nesta pasta** — está na Escritura de Emissão de Debêntures original (22/09/2022) e seus 1º/2º/3º Aditamentos, nenhum presente fisicamente aqui (mesma limitação já registrada na seção "Instrumentos" abaixo: só o 4º Aditamento, de maio/2026, está na pasta). O texto lido apenas confirma que o mecanismo existe e como ele se liquida — não os gatilhos específicos (covenants financeiros, inadimplemento, mudança de controle etc.). Vale solicitar a Escritura original ou seus aditamentos anteriores para fechar esse ponto.
 
 ## Acompanhamento mensal (Relatório de Crédito)
 
@@ -78,6 +109,14 @@ Todos os aditamentos de maio/2026 presentes na pasta decorrem da mesma origem: *
 - **Status: cumprido.** Documento de cumprimento: 3º Aditamento ao TS, assinado por todas as partes em 22/05/2026 (confirmado no log de assinaturas Clicksign).
 - Não há prazo em dias definido na ata — só autorização para celebrar os instrumentos necessários. Outros aditamentos relacionados (AF dos 4 imóveis, Cessão Fiduciária, Escritura de CCI, Termo de Emissão de Debêntures), todos de maio/2026, formalizam o mesmo conjunto de deliberações desta assembleia.
 
+### Obrigações contratuais da Devedora/Fiduciante (Cessão Fiduciária de Recebíveis, cláusulas 3.1/3.7/7.7, incluídas/alteradas pelo 2º Aditamento)
+
+- **Segregação obrigatória dos fluxos por conta**: a totalidade dos Direitos Creditórios Venda deve transitar única e exclusivamente pela Conta Arrecadadora Vendas (nº 96947-0, ag. 0262, Itaú); a totalidade dos Direitos Creditórios Locação e dos Direitos Creditórios das Vendedoras deve transitar única e exclusivamente pela Conta do Patrimônio Separado (nº 42.629-1, ag. 7307, Itaú) — custos de eventual desvio ficam a cargo exclusivo da Devedora.
+- **Proibição de redirecionar pagamentos**: a Devedora está proibida de instruir pagadores/Adquirentes a pagar em conta diferente das duas acima, ou de alterar esse direcionamento sem anuência prévia e expressa da Securitizadora (Fiduciária).
+- **Notificação de boletos/cobrança**: obrigação de fazer constar nos boletos e documentos de cobrança dos compradores dos imóveis que os recebíveis de venda estão cedidos fiduciariamente, e de notificar os bancos emissores para direcionarem o pagamento à Conta Arrecadadora Vendas.
+- **Relatório Créditos mensal** (já descrito na seção de Acompanhamento acima) é também uma obrigação contratual formal da Cessão Fiduciária (cláusula 3.17), não só do Termo de Securitização/Escritura de Debêntures — as três fontes (TS, Escritura, Cessão Fiduciária) foram alteradas em paralelo pelos aditamentos de maio/2026 para incluir a mesma obrigação, redundância proposital para reforçar a garantia.
+- **Liberação da garantia por imóvel vendido**: a Securitizadora (Fiduciária) se obriga a comparecer como interveniente em cada escritura de venda de imóvel para liberar a AF/Cessão sobre aquele imóvel especificamente, mas **só depois de confirmado o recebimento do preço na Conta Arrecadadora Vendas** — condição suspensiva que impede a liberação "adiantada" da garantia.
+
 ### Histórico (superado — não é mais pendência)
 
 **Alteração condicional do Valor Equity para aquisição do imóvel Next Haddock** (ata de 24/04/2023)
@@ -91,3 +130,6 @@ Todos os aditamentos de maio/2026 presentes na pasta decorrem da mesma origem: *
 2. **Datas de celebração não confirmadas** em 4 instrumentos: Escritura de CCI, Cessão Fiduciária de Recebíveis, AF de Ações, AF de Imóveis — Onze 22.
 3. **Gaps de aditamentos intermediários** em praticamente todos os instrumentos — só o aditamento mais recente (maio/2026) está fisicamente presente; os anteriores (1º, 2º, 3º...) são conhecidos apenas por citação.
 4. **Vínculo incerto** entre o 1º Aditamento à AF Next Haddock (01/04/2024) e a deliberação da ata de 24/04/2023 — não confirmado, mas sem impacto prático (obrigação já superada).
+5. **Lista de eventos de vencimento antecipado não confirmável nesta pasta** — a Escritura de Emissão de Debêntures original (22/09/2022) e seus 1º/2º/3º Aditamentos não estão fisicamente presentes; só se sabe, pelos Anexos II replicados nos aditamentos de maio/2026, que o mecanismo existe e como se liquida (VNA + Remuneração de 9,25% a.a. + Encargos Moratórios), não os gatilhos específicos. Vale solicitar esses documentos se for necessário avaliar risco de vencimento antecipado com precisão.
+6. **Fórmula exata da Atualização Monetária (IPCA) não está disponível** — só o resultado consolidado (mensal, pro rata por Dias Úteis, sem a defasagem/índice substituto detalhados) está nos Anexos II lidos; a fórmula matemática completa está na Escritura original, ausente da pasta.
+7. **Divergência de 1 dia entre os cronogramas de pagamento do CRI (TS) e da Debênture lastro**: o Anexo A do 3º Aditamento ao TS lista o último período (120) em **22/09/2032**, enquanto o Anexo A do 4º Aditamento à Escritura de Debêntures lista a mesma parcela em **21/09/2032** — mesmo padrão em praticamente todas as datas da tabela (CRI sempre 1 dia depois da Debênture equivalente). Não confirmado qual data prevalece para o vencimento efetivo do CRI; provavelmente reflete o buffer operacional entre o recebimento dos Créditos Imobiliários (Debênture) e o pagamento aos Titulares de CRI — vale checar se isso causa algum desencontro prático de caixa.

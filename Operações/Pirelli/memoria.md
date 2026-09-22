@@ -1,0 +1,145 @@
+# Pirelli — Memória da Operação
+
+> Leitura derivada de `Pipeline/portfolio_data_wrapped.json` e leitura direta, em 2 rodadas (via extração PyMuPDF, já que a máquina local não tinha poppler/pdftoppm para o Read padrão), dos 10 documentos da pasta, todos com camada de texto nativa — sem necessidade de OCR: Termo de Securitização original (07/12/2023) + 1º, 4º e 5º Aditamentos, Contrato de AF do DRS (e sua cópia idêntica, com as minutas anexas de AF do Solo), Escritura de Emissão de CCI, Instrumento de Cessão de Créditos Imobiliários (incl. cláusulas de remuneração, amortização, recompra compulsória e obrigações), e as 2 atas de assembleia da operação (09/05/2025 e 13/05/2025).
+>
+> Última atualização: 2026-09-18.
+
+## Resumo
+
+- **CRI**: 1ª e 2ª séries da **69ª Emissão**, **Canal Companhia de Securitização**, lastreados em CCI fracionária (Vórtx, Instituição Custodiante) representativa de Créditos Imobiliários cedidos pela **TZI Citrino Empreendimentos Imobiliários Ltda.** ("Cedente"/"Locadora", a real SPE devedora — não confundir com a "Pirelli" do nome da operação, que é a locatária). Agente Fiduciário: **Oliveira Trust DTVM**.
+- Taxa: **IPCA + 8,00% a.a.**, capitalizados diariamente. Vencimento final: **10/09/2039** (5.751 dias corridos de 12/12/2023). Volume total da emissão, após o 5º Aditamento (mai/2025): **R$ 184.885.000,00** — a 1ª série (R$ 170.748.000,00) veio na emissão original (07/12/2023); a **2ª série** (até R$ 14.137.000,00, incl. Lote Adicional) foi criada em jan/2025, pari passu com a 1ª, sem subordinação.
+- Prêmio de recompra facultativa (resgate antecipado): 0,5% × Duration — bate com o campo "Multa" do pipeline.
+- Saldo devedor (jul/26, pipeline): R$ 211,7 milhões. Duration: 5,51 anos.
+- **Não existe cláusula de "vencimento antecipado do CRI" nem de "LTV"** nesta operação — o mecanismo equivalente é a **Recompra Compulsória dos Créditos Imobiliários pela Cedente** (Contrato de Cessão, cláusula 7.1), com uma lista fechada de ~20 eventos-gatilho.
+
+## Estruturação — BTS Pirelli sobre Direito Real de Superfície (DRS)
+
+Operação de renda logística que nasceu para financiar um contrato **BTS (built-to-suit)** com a Pirelli e migrou para um play de renda pura após a conclusão da obra, com o aluguel da Pirelli pagando o serviço da dívida. A particularidade estrutural central:
+
+- A **Pirelli Pneus Ltda.** (CNPJ 59.179.838/0001-37) é proprietária da Gleba em Campinas/SP (matrícula 141.304, 3º RGI) onde também fica sua fábrica. Sobre a parte remanescente do terreno ("Terreno"), a Pirelli **constituiu Direito Real de Superfície (DRS) em favor da TZI Citrino** — é sobre esse DRS, e não sobre a propriedade plena, que a TZI Citrino construiu o galpão BTS (55.802 m² ABL) e loca de volta à própria Pirelli.
+- **Prazo do DRS: 195 meses contados de 07/12/2023** (~vence em torno de mar/2040) — **não é exatamente igual ao prazo da dívida** (vencimento final do CRI: 10/09/2039), mas ligeiramente mais longo, com ~5-6 meses de margem de segurança proposital para permitir a execução da garantia sem risco de o direito real expirar antes.
+- **Período de Locação**: 15 anos (180 meses) a partir do Termo de Imissão na Posse; os Créditos Imobiliários cedidos cobrem os primeiros **174 meses** (excluem-se os últimos 6 meses da locação).
+- A Pirelli pode, a seu critério, desmembrar a matrícula do Terreno ("Individualização da Matrícula") — pré-condição para a eventual constituição da AF do Solo (ver garantias).
+- **Origem da 2ª série**: criada em jan/2025 para captar recurso adicional, lastreado no aumento do Aluguel Mensal Líquido (para R$ 1.930.573,97, base 01/06/2023) decorrente do 2º aditamento ao Contrato de Locação/BTS (20/03/2025) — presumivelmente refletindo custo de obra maior ou escopo adicional do galpão.
+
+## Metodologia de cálculo — Juros Remuneratórios e Atualização Monetária (Cláusula 5.2/5.3 do Termo de Securitização, consolidada após o 1º Aditamento)
+
+**Atualização monetária (IPCA)** — `VNa = VN × C`, onde `C = NIk/NIk-1` é o fator de variação do IPCA. `NIk` é o número-índice do **segundo mês imediatamente anterior** à Data de Atualização (defasagem M-2; ex.: atualização de dezembro usa o índice de setembro, divulgado em outubro). **Periodicidade da atualização: anual**, em dezembro de cada ano até a assinatura do Termo de Imissão na Posse, e a partir daí no mês em que esse Termo foi assinado (com atualização retroativa do último dezembro até esse mês). O fator é acumulado mensalmente por dias corridos entre Datas de Aniversário. Índice substituto em cascata se o IPCA for descontinuado: (i) IPC/FGV Ibre; (ii) INPC.
+
+**Juros Remuneratórios** — taxa de **8,00% a.a., capitalizados diariamente de forma exponencial pro rata temporis**, desde a 1ª Data de Integralização (ou Data de Aniversário anterior) até o vencimento de cada parcela. Fórmula: `J = VNa × (Fator de Juros − 1)`, com `Fator de Juros = [(8,00/100 + 1)^(30/360)]^(dcp/dct)` (`dcp`/`dct` = dias corridos decorridos/no período entre Datas de Aniversário).
+
+**Data de Aniversário**: mensal, dia **10 de cada mês** — conceito distinto da "Data de Atualização" (anual, IPCA). Dois "aniversários" em paralelo: um mensal (capitalização de juros) e um anual (incidência do IPCA).
+
+## Metodologia de Amortização (Cláusula 5.4 e Anexo II do Termo de Securitização)
+
+**Não é Tabela Price nem SAC, nem pass-through automático do aluguel recebido** — é uma **tabela de amortização pré-fixada** na emissão: `Aai = VNa × Tai`, com `Tai` (percentual da i-ésima parcela, 4 casas decimais) fechado no Anexo II do TS (e ajustado a cada aditamento que altere o cronograma), não recalculado em função do caixa efetivamente recebido dos aluguéis mês a mês.
+
+- **Periodicidade: mensal**, na Data de Aniversário (dia 10, prorrogável para o Dia Útil seguinte, exceto a Data de Vencimento Final).
+- **Carência de ~15 meses**: do período 1 (10/01/2024) ao período 15 (10/03/2025), `Tai = 0%` e os juros são **incorporados ao saldo** (não pagos em caixa, sem amortização de principal).
+- **Início da amortização de principal: 10/04/2025** (período 16) — a partir daí passa a "paga juros, não incorpora", com `Tai` crescente e não-linear (ex.: 0,3158% no período 16, subindo gradualmente; pequenas quedas pontuais em dezembro de cada ano, coincidindo com a Data de Atualização anual do IPCA) — desenhada para acompanhar aproximadamente o crescimento do aluguel indexado, mas **fixada ex ante**, não dinâmica.
+- **Vencimento final**: Anexo I do TS registra 189 meses / **12/09/2039** — pequena divergência de 2 dias frente ao "10/09/2039" usado no resumo desta memória (vindo do pipeline); não confirmamos qual prevalece no Anexo II pós-5º Aditamento — vale checar.
+- **Não há Amortização Extraordinária Compulsória** (Cláusula 6.2 do TS veda expressamente) — só existe Resgate Antecipado Total, sempre integral (via Recompra Compulsória, Recompra Facultativa — sempre total, aviso prévio de 30 dias — ou Multa Indenizatória, ver seção "Vencimento Antecipado" abaixo).
+- Cláusula 5.7 exige ao menos 1 Dia Útil de buffer entre o recebimento dos Créditos Imobiliários e o pagamento aos titulares de CRI (operacional, não altera o mecanismo).
+
+## Metodologia de valoração da garantia — atenção: divergência entre o valor pactuado e o valor de acompanhamento
+
+Ponto importante identificado na leitura, que **difere do que está pactuado contratualmente**, mas que é a metodologia usada pelo time para acompanhamento do valor do ativo e que deve seguir sendo usada:
+
+- **Metodologia de acompanhamento (usar esta)**: o valor da garantia é calculado **trazendo o contrato de locação a valor presente pela taxa do CRI ao mês**, aplicada sobre os meses restantes de locação e o valor do aluguel (base e corrigido). No pipeline (jul/26): aluguel base (mai/23) R$ 1.930.573,97, aluguel corrigido (mar/26) R$ 2.169.486,14, 174 meses de locação, taxa de desconto (CRI) a.m. de 0,6434% → **Valor de Avaliação (DCF do BTS): R$ 226.723.124,74** — este é o valor correto/atualizado a usar (substitui o "Valor de Avaliação CapRate" de R$ 215.236.285,71, que é o número antigo/desatualizado, calculado por cap rate de mercado 7% e não pela metodologia de VP da locação).
+- **Atenção operacional**: no fluxo mensal do pipeline (`Pipeline/portfolio_data_wrapped.json`, série `fluxo`), o LTV está sendo calculado usando o valor de avaliação por **CapRate fixo** (R$ 215.236.285,71) em **todos os meses**, e não o valor por DCF — vale corrigir isso na próxima atualização do pipeline para refletir a metodologia correta (VP da locação).
+- **Metodologia contratual efetivamente pactuada (diferente, achado da leitura)**: nenhum dos 10 documentos lidos (nem o Termo de Securitização, nem o Contrato de AF do DRS) menciona "LTV", "valor presente" ou "fluxo de caixa descontado" como método de avaliação da garantia. A Cláusula 5 do Contrato de AF do DRS fixa o valor do Direito Real de Superfície com base no **valor venal do terreno** (Anexo II) — **R$ 85.361.473,80** na origem, contra um saldo devedor então de R$ 170.748.000,00 (ou seja, cobria só ~50% da dívida). A cláusula 5.5 dispensa expressamente qualquer reavaliação periódica obrigatória. O próprio Agente Fiduciário registrou por escrito no Termo de Securitização (cláusula 10.2(i)) que **a garantia da AF do DRS era insuficiente em relação ao saldo devedor** na data de assinatura, justificado pelo fato de que as demais garantias (AF do Solo, Fiança Bancária) ainda não estavam constituídas naquele momento. Não há confirmação, nos documentos lidos, de que essa insuficiência tenha sido formalmente sanada depois.
+- Ou seja: o valor de R$ 226,7 mi usado para acompanhamento é uma métrica de gestão de portfólio (racional: valorar um ativo com prazo de "validade" pelo fluxo de caixa que ele efetivamente gera, descontado pela taxa da própria dívida), não o valor formal da garantia registrada em cartório/contrato — que é mais conservador. Vale ter isso em mente em qualquer discussão de suficiência de garantia com o Agente Fiduciário/Securitizadora, que provavelmente ainda opera com base no valor venal registrado no instrumento de AF do DRS.
+
+## Garantias — detalhamento completo
+
+1. **AF do DRS** (Alienação Fiduciária do Direito Real de Superfície) — a TZI Citrino ("Fiduciante") aliena fiduciariamente à Canal ("Fiduciária") o Direito Real de Superfície que detém sobre o Terreno (a Pirelli, dona do solo, não é parte fiduciante desta garantia). Regida pela Lei 9.514/97. **Limitada ao prazo do próprio DRS** (195 meses) — a garantia se extingue junto com o direito real.
+2. **AF do Solo e da Propriedade Plena Superveniente** (condicional/eventual) — a ser constituída pela própria **Pirelli** (não pela TZI Citrino), a critério dela, apenas se/quando ocorrer a Individualização da Matrícula. Garante especificamente a Indenização por Rescisão Antecipada devida pela Pirelli, não o CRI como um todo. **Não constituída na data de assinatura do TS**; não há confirmação nos documentos lidos de que tenha sido celebrada depois — checar status atual.
+3. **Fiança Bancária** — contratada pela Pirelli, valor mínimo inicial R$ 50.000.000,00, com fórmula de ajuste mensal (9,5% a.a. + IPCA − aluguel do mês). Pode cair a 25% do valor se a AF do Solo for constituída com seguros específicos, ou ser dispensada se a controladora italiana **Pirelli Tyre S.p.A.** prestar fiança solidária equivalente. Status atual não confirmado nos documentos lidos.
+4. **Fundo de Despesas** — retenção inicial de R$ 1.534.100,00 do Preço de Cessão; Valor Mínimo R$ 200.000,00; verificação mensal.
+5. **Fundo de Obras** — valor líquido retido do Preço de Cessão para custear a construção, liberado conforme Relatórios de Medição; após o 5º Aditamento, ganhou liberações adicionais específicas para a 2ª série.
+6. **Fundo de Reserva** — ver seção dedicada abaixo.
+7. **Seguros** — Patrimonial (cosseguro Pirelli/Locadora/Securitizadora até a AF do Solo ser constituída), Fiança Locatícia e Perda de Receita de Aluguéis (18 meses de cobertura, condicionados à AF do Solo).
+8. **Performance Bond** — contratado pela Construtora durante a obra (20% do custo de construção, Securitizadora como beneficiária única); relevante só durante o Período de Obras, hoje presumivelmente sem função (obra concluída) — sem termo de baixa formal identificado nos documentos.
+
+## Fundo de Reserva (Cláusula 7.7 do Termo de Securitização) — acompanhamento mensal confirmado
+
+- Constituído com Valor Inicial de R$ 360.000,00, retido do Preço de Cessão.
+- **Valor Mínimo**: 2x o Aluguel Mensal nos primeiros 18 meses após o Termo de Imissão na Posse; **1x o Aluguel Mensal depois disso**, até a liquidação integral das Obrigações Garantidas.
+- **Verificação mensal** pela Securitizadora, a partir da data do Termo de Imissão na Posse — confirma o acompanhamento mensal mencionado pelo usuário.
+- Recomposição: prioritariamente com recursos dos Créditos Imobiliários; se insuficiente, aporte direto da Cedente em até 5 dias úteis, sob pena de configurar Evento de Recompra Compulsória.
+- Atual (pipeline, jul/26): exigido R$ 4.285.343,78, atual R$ 4.679.180,00 — enquadrado.
+
+## Vencimento antecipado — Recompra Compulsória dos Créditos Imobiliários (Cláusula 7.1 do Contrato de Cessão / 6.1.1 do Termo de Securitização)
+
+Confirmado: esta operação **não tem uma cláusula de "vencimento antecipado do CRI"** no sentido clássico — o mecanismo equivalente é a **Recompra Compulsória dos Créditos Imobiliários pela Cedente (TZI Citrino)**. Lista completa dos 20 eventos-gatilho (cláusula 7.1, itens a-t):
+
+**a.** Inadimplemento Material do Contrato de Locação (Cláusulas 24.8/24.9), mesmo dentro do prazo de cura — mas sanado o Inadimplemento dentro do prazo, o Evento também se considera sanado.
+**b.** Dano ao Imóvel durante o Período de Locação, de responsabilidade da Locadora.
+**c.** Contratação pela Cedente de qualquer endividamento (dívidas bancárias, empréstimos, financiamentos, mútuos, mercado de capitais local/internacional).
+**d.** Antes da Entrega Definitiva do Imóvel: (i) alteração do objeto social; (ii) distribuição de dividendos/frutos/vantagens aos sócios, qualquer valor; (iii) redução de capital/amortização/resgate de quotas; (iv) emissão de novas quotas/títulos/opções, alienação ou ônus sobre quotas; (v) mudança/transferência de controle direto ou indireto, incorporação/fusão/cisão/reorganização.
+**e.** Liquidação, dissolução, extinção, recuperação judicial/extrajudicial ou falência da **Locatária (Pirelli)**.
+**f.** Descumprimento pela Cedente de obrigações do Contrato de Locação ou de Cessão, não sanado no prazo de cura.
+**g.** Locatária deixar de pagar os aluguéis, não sanado no prazo de cura.
+**h.** Aprovação pela Cedente, sem anuência prévia da Cessionária, de mudança de controle da Locatária que implique perda de controle por empresas do **Grupo Pirelli** (mudanças de controle dentro do próprio Grupo Pirelli já são pré-autorizadas).
+**i.** Descumprimento de qualquer obrigação (pecuniária ou não) da Locatária no Contrato de Locação, não sanado.
+**j.** Tributos/impostos/taxas do Imóvel Locado (responsabilidade da Cedente) não mantidos em dia.
+**k.** Desapropriação parcial ou total do Imóvel que impeça a continuidade da locação.
+**l.** Questionamento judicial/extrajudicial pela própria Cedente quanto à validade do Contrato de Cessão.
+**m.** Cessão da posição da Locatária no Contrato de Locação sem anuência prévia da Cedente e da Cessionária.
+**n.** Protesto legítimo contra a Cedente acima de **R$ 500.000,00**, salvo elidido em 30 dias.
+**o.** Créditos Imobiliários deixarem de ser exigíveis por razão imputável à Cedente.
+**p.** Cedente aditar o Contrato de Locação reduzindo o valor dos Créditos Imobiliários ou alterando condições de pagamento, salvo já previsto ou autorizado.
+**q.** Declarações da Cedente nos Documentos da Operação constatadas inverídicas/incorretas.
+**r.** Liquidação/dissolução da Cedente, ou pedido de terceiros não elidido no prazo legal.
+**s.** Cessão pela Cedente de seus direitos/obrigações sem consentimento da Cessionária.
+**t.** Rescisão do Contrato de Locação pela própria Pirelli **sem pagar** a Indenização por Rescisão Antecipada devida.
+
+**Mecanismo**: Cedente comunica em até 5 Dias Úteis da ocorrência; deve apresentar periodicamente declaração de inocorrência dos eventos (**divergência entre documentos**: o Contrato de Cessão, cl. 7.1.2, diz periodicidade **anual**; o Termo de Securitização, tanto original quanto no 1º Aditamento — cl. 6.1.1.2 —, diz **semestral**; primeira declaração em até 12 meses da Primeira Liberação do Fundo de Obras em ambos os casos). Ao tomar ciência, a Emissora convoca **Assembleia Especial** para deliberar a recompra. Se a assembleia **deliberar pela recompra**, **ou não for instalada em 2ª convocação**, **ou não houver quórum** — em qualquer dos três casos a recompra se torna obrigatória (quórum insuficiente não impede, torna automática). **Valor de Recompra** = saldo necessário para pagamento integral dos CRI (VNa + Remuneração + Atualização) + encargos moratórios/despesas em aberto. **Prazo de pagamento**: à vista, em até 5 Dias Úteis da notificação. Fundo de Despesas/Obras/Reserva podem ser usados para compensar; Cedente complementa insuficiência no mesmo prazo. Mora: multa de 2% + juros de 1% a.m., título executivo extrajudicial. **Step-In da Securitizadora** em caso de inadimplemento da recompra (mediante Assembleia Especial): transferência da totalidade das quotas da Cedente (dação em pagamento) e/ou da posição contratual no DRS, com sub-rogação no Contrato de Locação — se a Cedente não formaliza em 2 Dias Úteis, a Securitizadora age sozinha via procuração. Recursos da recompra vão 100% para **Resgate Antecipado Total dos CRI** (sempre total, nunca parcial); CRI resgatados são cancelados; Créditos Imobiliários retrocedem à Cedente sem coobrigação; Contrato de Cessão se extingue.
+
+**Multa Indenizatória** (Cláusula 10.1 do Contrato de Cessão) — mecanismo **substitutivo, não cumulativo** com a Recompra Compulsória (cl. 10.1.1): aplicável quando (i) o fluxo de pagamento dos CRI for afetado por reconhecimento judicial/arbitral de ilegitimidade/invalidade/inexigibilidade dos Créditos Imobiliários ou do Contrato de Locação; ou (ii) tiver ocorrido um Evento de Recompra Compulsória cujo direito de recompra não puder ser exercido por qualquer motivo. Valor calculado com a mesma lógica do Valor de Recompra.
+
+## Obrigações da operação
+
+### Da Cedente/Devedora (TZI Citrino) — Cláusula 8.1 do Contrato de Cessão ("Demais Obrigações da Cedente")
+Outorgar procuração Step-In irrevogável; promover o registro da Escritura de DRS em até 60 dias (prorrogável +30); celebrar/protocolar a AF do DRS em até 10 dias úteis do registro da Escritura, com registro em até 60 dias da prenotação (prorrogável +30); cumprir integralmente o Contrato de Locação e demais Documentos da Operação; formalizar o endosso da Securitizadora como única beneficiária dos seguros, Fiança Bancária e Performance Bond; manter válidas as declarações prestadas; efetuar os lançamentos contábeis da cessão; manter todas as autorizações necessárias até a quitação; permitir acesso de auditores/agentes (aviso de 2 dias úteis); auxiliar no depósito da CCI/registro da Oferta Restrita na B3; prestar informações sempre que solicitado; **alterar o Contrato Social em até 30 dias** da assinatura para vedar qualquer mudança de tipo societário/controle, cisão, fusão ou incorporação **sem prévia autorização dos titulares de CRI em Assembleia Especial** (covenant estrutural societário permanente).
+
+### Da Fiduciante (TZI Citrino) — Contrato de AF do DRS, Cláusula 8.1
+Não ceder/onerar o Imóvel sem autorização da Fiduciária; preservar o DRS, notificando em até 5 dias úteis qualquer risco à sua validade; defender-se às próprias custas de qualquer ato que afete a AF do DRS; manter titularidade plena e posse mansa e pacífica; suspender/cancelar ônus não previsto em até 20 dias úteis; cumprir legislação trabalhista/previdenciária/ambiental; manter em dia tributos, obrigações trabalhistas/previdenciárias/ambientais; até a transmissão da posse, defender a garantia contra terceiros e manter o Imóvel em boas condições; manter válidas licenças/alvarás (cópias em até 10 dias úteis se solicitado); orientar fornecedores/clientes sobre boas práticas ambientais/trabalhistas; cumprir instruções da Fiduciária para consolidação da titularidade do DRS em caso de vencimento antecipado; permitir inspeção do Imóvel (aviso de 5 dias úteis); firmar aditamentos solicitados em até 5 dias úteis; informar por escrito em até 2 dias úteis qualquer esbulho, desapropriação, sinistro ou dano ao Imóvel.
+
+### Da minuta de AF do Solo e da Propriedade Plena Superveniente (garantia condicional — ver ressalva sobre status não confirmado)
+Manter o Imóvel em perfeito estado (conforme Planilha de Conservação e Manutenção do Contrato de Locação); manter o Seguro Patrimonial válido do Termo de Imissão na Posse até o fim da locação ou extinção das Obrigações Garantidas; pagar pontualmente tributos/IPTU/despesas do Imóvel (sob pena de a Fiduciária pagar e cobrar reembolso + multa de 2% + juros de 1% a.m. + IPCA); manter titularidade livre de ônus, exceto a AF e o DRS em favor da TZI Citrino **e de "TLM – Total Logistic Management Serviços de Logística Ltda."** (terceiro identificado nesta minuta, papel ainda não esclarecido — ver Pontos de Atenção); cumprir legislação trabalhista/ambiental/tributária; manter licenças e alvarás.
+
+### Da Emissora (Canal Companhia de Securitização) — Cláusula 8 do Termo de Securitização
+Publicar fatos relevantes; **Relatório Mensal** (art. 47, III Res. CVM 60, via Fundos.NET, até 30 dias do fechamento do mês) ao Agente Fiduciário; fornecer informações sobre os Créditos Imobiliários em até 15 dias corridos da solicitação; permitir acesso do Agente Fiduciário em 5 dias úteis; administrar o Patrimônio Separado com registro contábil independente; manter registro de securitizadora atualizado na CVM; comunicar em 5 dias úteis eventos de risco aos titulares; publicar DFs anuais auditadas; celebrar documentos de Individualização da Matrícula em até 30 dias do requerimento da Locatária; **Relatório Anual** (Res. CVM 17 — organograma, dados financeiros, atos societários) até 90 dias antes do prazo de disponibilização na CVM; notificar imediatamente o Agente Fiduciário se alguma declaração se tornar inverídica.
+
+**Ordem de Prioridade de Pagamentos (cascata, cláusula 9.8 do TS)**: (a) despesas em aberto do Patrimônio Separado; (b) recomposição do Fundo de Despesas; (c) recomposição do Fundo de Reserva; (d) juros em atraso; (e) amortização em atraso; (f) juros do período; (g) amortização do período; (h) excedente à Conta de Livre Movimentação da Cedente.
+
+### Da Locatária (Pirelli)
+Não há cláusula autônoma de "Obrigações da Locatária" nos documentos desta pasta (o Contrato de Locação em si não está aqui) — aparecem refletidas indiretamente como gatilhos de Recompra Compulsória: pagar aluguéis em dia (evento g), cumprir obrigações do Contrato de Locação (evento i), não mudar de controle fora do Grupo Pirelli sem anuência (evento h), não rescindir sem pagar a Indenização por Rescisão Antecipada (evento t); manter a Fiança Bancária e contratar o Seguro Patrimonial em até 30 dias (cláusula 6.1.3 do Contrato de Cessão).
+
+**Não foram encontrados covenants financeiros** (índices de alavancagem, DSCR etc.) exigidos de nenhuma parte em nenhum dos documentos lidos.
+
+## Histórico de aditamentos e atas
+
+1. **07/12/2023** — Termo de Securitização original (1ª série), Contrato de Cessão, AF do DRS, Escritura de Emissão de CCI.
+2. **12/12/2023** — 1º Aditamento: ajustes de definições/endereço da Securitizadora, sem alteração econômica (CRI ainda não integralizados, dispensada AGT).
+3. **07/06/2024** — 2º Aditamento (não lido diretamente, só referenciado): alterou a definição de "Prazo de Colocação" e cláusulas 3.5.2/4.1.
+4. **02/01/2025** — Aditamento que criou a **2ª série** de CRI, compartilhando o mesmo lastro/Patrimônio Separado/Garantias da 1ª série, sem subordinação. Rotulado por erro material como "Segundo Aditamento", quando cronologicamente era o terceiro.
+5. **10/01/2025 (assinado 13/01/2025)** — **4º Aditamento**: puramente correcional — retifica o erro de nomenclatura do aditamento anterior (passa a ser oficialmente "Terceiro Aditamento") e corrige a descrição da Securitizadora ("Companhia Aberta" → "Securitizadora S1"). Sem efeito econômico.
+6. **09/05/2025** — **AGT**: pauta para aprovar (i) Modificação da Oferta da 2ª Série para permitir Lote Adicional de até R$ 5.000.000 (teto subindo a até R$ 14.386.000), lastreado no aumento do Aluguel Mensal Líquido decorrente do 2º aditamento ao Contrato de Locação/BTS (20/03/2025); (ii) alteração dos Documentos da Operação correspondentes; (iii) autorização de atos. Com 32,32% dos CRI em circulação presentes, **todos os itens foram aprovados apenas para suspensão**, com reabertura marcada para 12/05/2025 — adiamento procedimental, não rejeição.
+7. **13/05/2025** — **AGT reaberta**: mesma pauta, mesmo quórum (32,32%), **aprovação unânime**, sem contrários/abstenções. Valor final do Lote Adicional ajustado para **R$ 4.751.000,00** (teto final da 2ª série: R$ 14.137.000,00).
+8. **14/05/2025** — **5º Aditamento**, assinado no dia seguinte à AGT, formaliza exatamente a deliberação de 13/05/2025: incorpora a Modificação da Oferta (Lote Adicional R$ 4.751.000,00), atualiza definições dos Documentos da Operação, eleva o "Valor dos Créditos Imobiliários" para R$ 341.957.490,11, mantém o "Preço de Cessão" em R$ 184.885.000,00, insere a Cláusula 3.9 ("Lote Adicional") e ajusta a liberação do Fundo de Obras da 2ª série.
+
+## Pontos de atenção / riscos
+
+1. **Metodologia de valoração da garantia usada para acompanhamento (VP da locação, R$ 226,7 mi) diverge da metodologia formalmente pactuada no Contrato de AF do DRS (valor venal do terreno, R$ 85,4 mi na origem)** — ver seção dedicada acima. O time optou por manter a metodologia de VP da locação para fins de gestão do portfólio; vale ter isso em mente ao discutir suficiência de garantia com o Agente Fiduciário.
+2. **AF do DRS declaradamente insuficiente na origem** (R$ 85,4 mi vs. R$ 170,7 mi de saldo devedor então) — reconhecido por escrito pelo próprio Agente Fiduciário no Termo de Securitização. Sem confirmação de que essa insuficiência tenha sido sanada depois (ex.: novo laudo, reforço de garantia).
+3. **AF do Solo e da Propriedade Plena Superveniente**: sem confirmação de que tenha sido constituída até hoje — se nunca foi, a operação depende ainda mais da Fiança Bancária e da AF do DRS como garantias reais efetivas.
+4. **Fiança Bancária e Performance Bond**: status atual (valor vigente, se já reduzida/dispensada, se já baixada) não confirmado nos documentos lidos.
+5. **Pipeline calcula LTV com o valor de avaliação antigo (CapRate, R$ 215,2 mi fixo)** em vez do valor de VP da locação (R$ 226,7 mi) — vale corrigir na próxima atualização do pipeline.
+6. **Prazo do DRS (195 meses / ~mar-2040) é ligeiramente mais longo que o vencimento do CRI (10/09/2039)**, não idêntico — margem de segurança proposital, não coincidência.
+7. **Documentos citados mas não presentes nesta pasta**: a própria Escritura de Constituição do DRS, o Contrato de Locação/BTS original e seus aditamentos (1º e 2º), o eventual laudo de avaliação que fundamente os R$ 226,7 mi / R$ 215,2 mi do pipeline, e o eventual Contrato de AF do Solo (se já celebrado) — relevantes para fechar as lacunas acima, se precisar de uma análise mais completa.
+8. **Divergência de periodicidade da declaração de inocorrência de Eventos de Recompra Compulsória/Multa Indenizatória**: o Contrato de Cessão (cláusula 7.1.2) diz **anual**; o Termo de Securitização — tanto na versão original quanto no 1º Aditamento (cláusula 6.1.1.2) — diz **semestral**. É uma divergência textual real entre os dois instrumentos (não é erro de leitura), vale esclarecer com o Agente Fiduciário qual prevalece.
+9. **"TLM – Total Logistic Management Serviços de Logística Ltda."** aparece, na minuta de AF do Solo, como titular adicional de um DRS sobre o mesmo Imóvel, ao lado da TZI Citrino — papel não esclarecido nos documentos lidos; pode ser outro locatário/detentor de direito real sobre parte do terreno, ou um resquício de minuta-modelo genérica do escritório. Vale investigar se é relevante para a operação.
+10. **Pequena divergência na data de vencimento final**: o Anexo I do Termo de Securitização registra 189 meses / **12/09/2039**, dois dias depois do "10/09/2039" usado no resumo desta memória (vindo do pipeline) — não confirmado qual prevalece no Anexo II pós-5º Aditamento.
+11. **Não há Amortização Extraordinária Compulsória nem covenants financeiros** (índices de alavancagem, DSCR etc.) identificados em nenhum dos documentos lidos — o único mecanismo de proteção "automática" dos titulares é a lista fechada de eventos de Recompra Compulsória (cláusula 7.1) e a restrição societária/de endividamento da Cedente (eventos "c" e "d").
